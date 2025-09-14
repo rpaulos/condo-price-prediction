@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.overlay {
+    background-image: url(https://www.shutterstock.com/image-photo/manila-philippines-january-2020-araneta-600nw-1638544669.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(50px);
+    backdrop-filter: blur(1px);        
+    -webkit-backdrop-filter: blur(10px); 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Background */
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(1px);        
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 0px;
+    padding: 20px;
+    padding-left: 75px;
+    padding-right: 75px;  
+
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff; 
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 0 20px;
+}
+
+.highlight {
+    color: #e63946;
+}
+
+.hero h1 {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 75px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #f0f0f0;
+    max-width: 600px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #f4b558;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-icon {
+    height: 20px;        
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;     
+}
+
+
+.cta-btn:hover {
+    background-color: #d1953b;
+}
+
+
+.how-it-works {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.how-it-works > p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    color: #555;
+}
+
+/* Container for the three cards */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;         
+    flex-wrap: wrap;   
+}
+
+/* Each card */
+.how-it-works .container {
+    flex: 1 1 250px;   
+    max-width: 300px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;   
+}
+
+.how-it-works .icon_box {
+    width: 80px;
+    height: 80px;
+    background-color: #f4b558;
+    border-radius: 5px;
+    outline: 2px solid oldlace;
+
+    margin: 0 auto 20px auto;  
+    display: flex;           
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icon and text inside each card */
+.how-it-works .icon_box img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.how-it-works .box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.how-it-works .box p {
+    font-size: 1rem;
+    color: #555;  
+    line-height: 1.5;
+}   
+
+/* Contact Section Container */
+.contact {
+    background-color: #f5f5f5;      
+    padding: 40px 0;
+}
+
+.row1-container {
+    display: flex;
+    justify-content: center;        
+    align-items: flex-start;        
+    gap: 60px;                      
+    max-width: 1200px;
+    margin: 0 auto;                 
+}
+
+/* Column styling */
+.company-details {
+    flex: 2;                        
+    max-width: 450px;              
+}
+
+.quick-links,
+.contact-info {
+    flex: 1;                        
+    max-width: 300px;               
+}
+
+/* Company details text */
+.company-details h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.company-details p {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Social icons row */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Quick links list */
+.quick-links h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links li {
+    margin: 6px 0;
+}
+
+.quick-links a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+/* Contact info list */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    color: #555;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.footer {
+    background-color: #f5f5f5;   
+    text-align: center;         
+    padding: 20px 0;           
+    font-size: 14px;        
+    border-top: 1px solid #ddd; 
+}
+
+.footer p {
+    margin: 0 0 10px 0;         
+    color: #555;              
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;               
+}
+
+.footer-links a {
+    color: #007bff;  
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0056b3;
+}
