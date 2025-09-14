@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Landing Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <main>
+            <div class="overlay">
+                <header>
+                    <div class="logo-section">
+                        <img src="logo.png" alt="Logo" class="logo">
+                        <span class="brand-name">CondoValue QC</span>
+                    </div>
+
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="valuation.html">Valuation</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <section class="hero">
+                    <h2>Interactive Property Valuation</h2>
+                    <p>Experience our advanced mapping technology in action</p>
+
+                    <div class="property-map-container">
+                        <div id="property-details">
+                            <form>
+                                <div>
+                                    <img src="images/icons/building.png" alt="Building Icon" class="Icon">
+                                    <h3>Property Details</h3>
+                                </div>
+                                <label for="condo-name">Condo Name</label>
+                                <input type="text" id="condo-name" placeholder="e.g. Sentinel Residences" />
+
+                                <label for="neighborhood">Neighborhood</label>
+                                <select id="neighborhood">
+                                    <option value="" disabled selected>Select Neighborhood</option>
+                                    <option value="Cubao">Cubao</option>
+                                    <option value="Diliman">Diliman</option>
+                                    <option value="New Manila">New Manila</option>
+                                    <option value="Project 2">Project 2</option>
+                                    <option value="Project 3">Project 3</option>
+                                    <option value="Project 4">Project 4</option>
+                                    <option value="Project 5">Project 5</option>
+                                    <option value="Project 6">Project 6</option>
+                                    <option value="Project 7">Project 7</option>
+                                    <option value="Project 8">Project 8</option>
+                                    <option value="Project 9">Project 9</option>
+                                    <option value="Project 10">Project 10</option>
+                                    <option value="Project 11">Project 11</option>
+                                    <option value="Project 12">Project 12</option>
+                                    <option value="Project 13">Project 13</option>
+                                    <option value="Sikatuna Village">Sikatuna Village</option>
+                                </select>
+
+                                
+                            </form>
+
+                        </div>
+                        <div id="map">
+                            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1v7Yk3b2XfJH5e4g8F6yZxYzZzZzZzZzZ&ehbc=2E312F" width="100%" height="480"></iframe>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="footer">
+                <p>&copy; 2025 CondoValue QC. All rights reserved. Made with ❤️ in the Philippines</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </section>
+
+        </main>
+
+    </body>
+</html>
