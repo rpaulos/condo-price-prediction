@@ -26,11 +26,13 @@ def build_map(lat: float, lon: float, zoom: int, condo_name: str, submit: bool) 
         tiles="OpenStreetMap"
     )
 
+    condo_icon_path = "Assets/condo.png"
     # Marker for current location
     folium.Marker(
         [st.session_state.map_lat, st.session_state.map_lon],
         popup=condo_name if submit and condo_name else "Quezon City",
-        tooltip="Click for info"
+        tooltip="Click for info",
+        icon=folium.CustomIcon(icon_image=condo_icon_path, icon_size=(30, 30))
     ).add_to(m)
 
     # Draw radius only if user has successfully searched

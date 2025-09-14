@@ -36,6 +36,8 @@ m = functions.build_map(st.session_state.map_lat, st.session_state.map_lon, st.s
 
 nearby_establishments = functions.get_nearby_establishments(st.session_state.map_lat, st.session_state.map_lon)
 
+print(nearby_establishments)
+
 m = functions.pin_establishments_to_map(m, nearby_establishments)
 
 st.title("Quezon City")
