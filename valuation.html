@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css" />
     </head>
 
@@ -29,15 +30,15 @@
                     </nav>
                 </header>
 
-                <section class="hero">
+                <section class="hero-valuation">
                     <h2>Interactive Property Valuation</h2>
                     <p>Experience our advanced mapping technology in action</p>
 
                     <div class="property-map-container">
                         <div id="property-details">
                             <form>
-                                <div>
-                                    <img src="images/icons/building.png" alt="Building Icon" class="Icon">
+                                <div class="form-header">
+                                    <img src="images/icons/building.png" class="Icon">
                                     <h3>Property Details</h3>
                                 </div>
                                 <label for="condo-name">Condo Name</label>
@@ -63,13 +64,61 @@
                                     <option value="Project 13">Project 13</option>
                                     <option value="Sikatuna Village">Sikatuna Village</option>
                                 </select>
-
-                                
+                                <div id="rooms-container">
+                                    <div id="bedrooms-count">
+                                        <form>
+                                            <label for="bedrooms">Bedrooms</label>
+                                            <input type="number" id="bedrooms" min="0" max="15" value="1" />
+                                        </form>
+                                    </div>
+                                    <div id="bathrooms-count">
+                                        <form>
+                                            <label for="bathrooms">Bathrooms</label>
+                                            <input type="number" id="bathrooms" min="0" max="15" value="1" />
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="form-header">
+                                    <img src="images/icons/amenities.png" class="Icon">
+                                    <h3>Amenities</h3>
+                                </div>
+                                <div class="amentieis-container">
+                                    <div class="column1">
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="Pool"> Pool
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="Security"> 24/7 Security
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="FunctionHall"> Function Hall
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="Parking"> Parking
+                                        </label>
+                                    </div>
+                                    <div class="column2">
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="Gym"> Gym
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="Study Hall"> Study Hall
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="AirConditioning"> AC Unit
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="amenities" value="PetFriendly"> Pet Friendly
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="submit-container">
+                                    <button type="submit" id="submit-button">Submit</button>
+                                </div>
                             </form>
-
                         </div>
                         <div id="map">
-                            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1v7Yk3b2XfJH5e4g8F6yZxYzZzZzZzZzZ&ehbc=2E312F" width="100%" height="480"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247008.65735544031!2d120.89737170323848!3d14.683711520862554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7eadd63a1df%3A0xa6f6a02c480fc32c!2sCubao%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1757898068536!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </section>
