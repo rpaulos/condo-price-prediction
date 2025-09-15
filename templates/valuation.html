@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
 
     <body>
@@ -22,8 +22,8 @@
 
                     <nav>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="valuation.html">Valuation</a></li>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('valuation') }}">Valuation</a></li>
                             <li><a href="how-it-works.html">How It Works</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
@@ -70,10 +70,8 @@
                                         <input type="number" id="bedrooms" name="bedrooms" min="0" max="15" value="1" />
                                     </div>
                                     <div id="bathrooms-count">
-                                        <form>
-                                            <label for="bathrooms">Bathrooms</label>
-                                            <input type="number" id="bathrooms" min="0" max="15" value="1" />
-                                        </form>
+                                        <label for="bathrooms">Bathrooms</label>
+                                        <input type="number" id="bathrooms" name="bathrooms" min="0" max="15" value="1" />
                                     </div>
                                 </div>
                                 <div class="form-header">
@@ -113,6 +111,7 @@
                                 <div class="submit-container">
                                     <button type="submit" id="submit-button">Submit</button>
                                 </div>
+                                <!-- Add pop up message here after clicking the submit -->
                             </form>
                         </div>
                         <div id="map">

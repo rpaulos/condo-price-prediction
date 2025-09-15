@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Landing Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+        <main>
+            <div class="overlay">
+                <header>
+                    <div class="logo-section">
+                        <img src="logo.png" alt="Logo" class="logo">
+                        <span class="brand-name">CondoValue QC</span>
+                    </div>
+
+                    <nav>
+                        <ul>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('valuation') }}">Valuation</a></li>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <section class="hero">
+                    <h1>Discover the True Value<br>of Your Condo in <span class="highlight">Quezon City</span></h1>
+                    <p>Harness geospatial insights to price your property for rent with confidence using advanced Filipino market analytics.</p>
+                    <a href="valuation.html" class="cta-btn">
+                        <img src ="images/search.png" alt="icon" class="btn-icon">
+                        Start Valuation
+                    </a>
+                </section>
+            </div>
+
+            <section class="how-it-works" id="how-it-works">
+                <h2>How It Works</h2>
+                <p>Our advanced geospatial analysis combines Filipino markets insights with cutting-edge technology to deliver accurate property valuations.</p>
+
+                <div class="steps">
+                    <div class="container">
+                        <div class="icon_box">
+                            <img src="images/icons/pin.png" alt="Pin Icon" class="Icon">
+                        </div>
+                        <div class="box">
+                            <h3>Pin Your Location</h3>
+                            <p>Enter your condo details and pin the exact location on our interactive Quezon City Map</p>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="icon_box">
+                            <img src="images/icons/pin.png" alt="Pin Icon" class="Icon">
+                        </div>
+                        <div class="box">
+                            <h3>Analyze Amenities and Nearby Establishments</h3>
+                            <p>Takes into account the offers and amenities in the vicinity to provide a comprehensive valuation.</p>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="icon_box">
+                            <img src="images/icons/pin.png" alt="Pin Icon" class="Icon">
+                        </div>
+                        <div class="box">
+                            <h3>Get Precise Pricing</h3>
+                            <p>Receive accurate rental estimates based on geospatial analysis and market trends.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <div class="row1-container">
+                    <div class="company-details">
+                        <div>
+                            <img src="images/logo.png" alt="logo" class="logo">
+                            <h2> CondoValue QC </h2>
+                        </div>
+                        <p>Empowering Filipino property owners with intelligent geospatial insights for accurate condo rental valuations in Quezon City.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/QCGov"><img src="images/icons/facebook.png" alt="Facebook" class="social-icon"></a>
+                            <a href="https://x.com/GenshinImpact"><img src="images/icons/twitter.png" alt="Twitter" class="social-icon"></a>
+                            <a href="https://www.linkedin.com/feed/"><img src="images/icons/linkedin.png" alt="LinkedIn" class="social-icon"></a>
+                        </div>
+                    </div>
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="how-it-works.html">How It Works</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="api-access.html">API Access</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-info">
+                        <ul>
+                            <li><img src="images/icons/email.png" alt="Email Icon" class="contact-icon"> info@condovalueqc.com</li>
+                            <li><img src="images/icons/phone.png" alt="Phone Icon" class="contact-icon"> (02) 1234 5678</li>
+                            <li><img src="images/icons/location.png" alt="Location Icon" class="contact-icon"> 123 Quezon Ave, Quezon City, Philippines</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="footer">
+                <p>&copy; 2025 CondoValue QC. All rights reserved. Made with ❤️ in the Philippines</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </section>
+
+        </main>
+
+    </body>
+</html>

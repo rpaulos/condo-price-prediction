@@ -10,7 +10,7 @@ body {
 }
 
 .overlay {
-    background-image: url(images/background.jpg);
+    background-image: url();
     background-size: cover;
     background-repeat: no-repeat;
     backdrop-filter: blur(50px);
