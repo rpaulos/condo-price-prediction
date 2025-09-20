@@ -116,3 +116,65 @@ def pin_establishments_to_map(m: folium.Map, establishments: List[Dict[str, Opti
 
     return m
 
+def reverse_geocode(condo_name, neighborhood):
+    full_address = f'{condo_name}, {neighborhood}, Quezon City, Philippines'
+
+    try:
+        geocode_results = gmaps.geocode(full_address)
+    except Exception as e:
+        print('Geocoding error: ', e)
+        return None, None
+
+    if geocode_results:
+        location = geocode_results[0]['geometry']['location']
+        return location['lat'], location['lng']
+    else:
+        lat, lng = None, None
+
+def nearby_search(lat: float, lon: float) -> list[dict]:
+    radius = 500
+    nearby_establishments = []
+
+    tags= {
+        'school', 'hospital', 'shopping_mall', 'supermarket', 'church',
+        'park', 'gym', 'restaurants', 'bank', 'pharmacy', 'police',
+        'subway_station', 'train_station', 'university', 
+        'transit_station', 'bus_station'
+    }
+
+    tag_colors = {
+        'school':          'darkgreen',
+        'hospital':        'red',
+        'shopping_mall':   'purple',
+        'supermarket':     'green',
+        'church':          'darkred',
+        'park':            'lightgreen',
+        'gym':             'orange',
+        'restaurant':      'pink',
+        'bank':            'darkblue',
+        'pharmacy':        'cadetblue',
+        'police':          'black',
+        'subway_station':  'lightblue',
+        'train_station':   'darkpurple',
+        'university':      'beige',
+        'transit_station': 'gray',
+        'bus_station':     'lightgray'
+    }
+
+    for tag in tags:
+        places_result = gmaps.places_nearby(
+            location=(lat, lon),
+            radius=radius,
+            type=tag
+        )
+
+        for place in places_result.get('results', []):
+            nearby_establishments.append({
+                'tag': tag,
+                'name': place['name'],
+                'latitude': place['geometry']['location']['lat'],
+                'longitude': place['geometry']['location']['lng'],
+                'pin_color': tag_colors.get(tag, 'blue')
+            })
+
+    return nearby_establishments

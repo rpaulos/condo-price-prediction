@@ -365,8 +365,8 @@ nav a:hover {
     flex: 1;                
     max-width: 350px;     
     background: #ececec;  
-    margin-left: 20px; 
-    padding-left: 20px;
+    /* margin-left: 20px; 
+    padding-left: 20px; */
     box-sizing: border-box;
     border-radius: 8px 0px 0px 8px;
     display: flex;
@@ -389,6 +389,12 @@ nav a:hover {
     font-weight: 500;
     color: #1f1e1e;
     text-align: left;
+}
+
+#property-details form .amentieis-container label {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
 }
 
 #property-details form input,
@@ -426,44 +432,324 @@ nav a:hover {
     color: #1f1e1e;
 }
 
-.amentieis-container {
-    display: flex;            
-    gap: 20px;               
-    margin-bottom: 20px;
-}
-
-/* Style for each column */
-.amentieis-container .column1,
-.amentieis-container .column2 {
-    font-family: Poppins;
-    color: black;
+.input-field-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;              
+    margin-bottom: 10px;
 }
 
-/* Style for checkbox labels */
-.amentieis-container label {
+.input-field-group label {
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.input-field-group input[type="text"] {
+    width: 260px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.input-drop-down-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-drop-down-group label {
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.input-drop-down-group select {
+    width: 260px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+#container-for-rooms {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#container-for-rooms > div{
+    flex: 1;
+}
+
+#count-of-bedrooms,
+#count-of-bathrooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#count-of-bedrooms label,
+#count-of-bathrooms label {
+    /* margin-bottom: 4px;
+    margin-left: 10px; */
+}
+
+#count-of-bedrooms input,
+#count-of-bathrooms input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container-for-amenities {
+    display: flex;
+    gap: 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.amenities-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.amenities-column label {
     display: flex;
     align-items: center;
-    gap: 8px;               
-    font-size: 12px;
+    gap: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.amenities-column input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #d1953b;
     cursor: pointer;
 }
 
+.submit-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#submit-button-real {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d1953b; 
+    color: white;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 75%;
+}
+
+#submit-button-real:hover {
+    background-color: #b37f2f;
+}
+
+.hero-valuation-2-title-container {
+    text-align: center;
+    color: white;
+    /* border: red;
+    border-style: dashed; */
+}
+
+.hero-valuation-2-title-container h2 {
+    font-size: 42px;
+    margin-bottom: 0px;
+}
+
+.hero-valuation-2-title-container p {
+    font-size: 18px;
+}
+
+
+/* .amentieis-container {
+    display: flex;            
+    gap: 20px;               
+    margin-bottom: 20px;
+} */
+
+/* Style for each column */
+/* .amentieis-container .column1,
+.amentieis-container .column2 {
+    font-family: Poppins, sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+} */
+
+/* Style for checkbox labels */
+/* .amentieis-container label {
+    display: flex;
+    align-items: center;
+    gap: 0px;               
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 15px;
+} */
+
 /* Optional: size the checkboxes */
+/* .amentieis-container input[type="checkbox"] {
+    width: 16px;          
+    height: 16px;
+    cursor: pointer;
+    accent-color: #d1953b;
+    margin: 0;
+} */
+
+/* .amentieis-container {
+    display: flex;
+    gap: 0px;
+    padding: 20px;
+    font-family: Poppins, sans-serif;
+}
+
+.column1,
+.column2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.amentieis-container label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    cursor: pointer;
+} */
+
+/* .amentieis-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.column1,
+.column2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.amentieis-container label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
 .amentieis-container input[type="checkbox"] {
     width: 16px;
     height: 16px;
+    accent-color: #d1953b;
+    cursor: pointer;
 }
 
-.amentieis-container input[type="checkbox"] {
-    width: 20px;     
-    height: 20px;   
-    cursor: pointer; 
-    accent-color: #d1953b; 
+.column1 {
+    border-color: black;
+    border-style: dashed;
+    flex-wrap: wrap;
 }
 
+.column2 {
+    border-color: #d1953b;
+    border-style: dashed;
+} */
+
+.details-and-map-container {
+    display: flex;
+    gap: 0px;
+    box-sizing: border-box;
+    margin-top: 4px;
+    height: 575px;
+    /* border: orange;
+    border-style: dashed; */
+    padding-bottom: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+#input-details {
+    /* margin-left: 30px; */
+    width: 300px;
+    box-sizing: border-box;
+    /* border: red;
+    border-style: dashed; */
+    background-color: #fafafa;
+    border-radius: 10px 0px 0px 10px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#map-container {
+    flex: 1;
+    box-sizing: border-box;
+    /* border: blue;
+    border-style: dashed; */
+    display: flex;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#map-container iframe {
+    width: 100%;    
+    height: 100%;          
+    border: 0;
+    border-radius: 0 10px 10px 0; 
+    box-sizing: border-box;
+}
+
+.header-of-form {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;  /* vertically center image and text */
+    gap: 10px;            /* space between image and text */
+}
+
+.header-of-form .Icon {
+    width: 32px;          /* set the icon size as you prefer */
+    height: 32px;
+}
+
+#map {
+    flex: 2;
+    height: 100%;
+}
+
+#map iframe {
+    flex: 2;                
+    border: none;           
+    padding-left: 5px;
+    border-radius: 0px 8px 8px 0px;
+    height: 600px;
+    width: 100%;
+}
 
 .submit-container {
     margin-top: auto;
