@@ -1,0 +1,85 @@
+import googlemaps
+import requests
+import markdown
+
+import numpy as np
+
+from flask import Flask
+from flask import jsonify
+from flask import request
+from flask import render_template
+from keys import googlemaps_api_key
+from functions import reverse_geocode, nearby_establishment_search, count_categories, place, places_details, format_data, format_data_lr, multiple_linear_regression_model, logistic_regression_model, justification_query, justify_condo_price
+from pprint import pprint
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('landing.html')
+
+@app.route('/occupie', methods=['GET', 'POST'])
+def valuation():
+    return render_template('occupie.html')
+
+@app.route('/')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/submit', methods=['POST'])
+def occupie():
+    condo_name = request.form.get('name-of-condo')
+    neighborhood = request.form.get('neighborhood')
+    furnishing = request.form.get('type-of-furnishing')
+    size = request.form.get('size-of-condo')
+    bedrooms    = request.form.get('count-of-bedrooms')
+    bathrooms   = request.form.get('count-of-bathrooms')
+    amenities   = request.form.getlist('amenities')
+
+    # Reverse geocode the location of the condo and its unique place_ID
+    place_ID, lat, lng = place(condo_name, neighborhood)
+
+    # Get the reviews and the number of reviews
+    ratings, review_count = places_details(place_ID)
+
+    # Locate the establishments within a 500 meter radius
+    establishments = nearby_establishment_search(lat, lng)
+
+    transportation_count, healthcare_count, education_count, shopping_count, restaurants_count = count_categories(establishments)
+
+    # Format the data to pass to the price predictor model
+    formatted_data_mlr = format_data(furnishing, bedrooms, bathrooms, amenities, ratings, review_count, size)
+
+    # Pass the formatted data to the ML model to get the predicted price
+    predicted_price = multiple_linear_regression_model(formatted_data_mlr)
+    # predicted_price = float(predicted_price)
+
+    formatted_data_lr = format_data_lr(formatted_data_mlr, predicted_price)
+
+    # Pass the formatted data with the result from the MLR model to get the occupancy rate
+    predicted_occupancy, probability = logistic_regression_model(formatted_data_lr)
+    predicted_occupancy = str(predicted_occupancy)
+
+    # Formate the data needed to annalyze the results
+    prompt = justification_query(condo_name, neighborhood, size, bedrooms, bathrooms, furnishing, amenities, establishments, predicted_price, predicted_occupancy)
+
+    # Pass the prompt to Gemini to analyze the result
+    ai_analysis = justify_condo_price(**prompt)
+    markdown_ai_analysis = markdown.markdown(ai_analysis)
+
+    # print(predicted_occupancy)
+    # print(ai_analysis)
+
+    return jsonify({
+        'predicted_price': predicted_price,
+        'predicted_occupancy': predicted_occupancy,
+        'transportation_count': transportation_count,
+        'healthcare_count': healthcare_count,
+        'education_count': education_count,
+        'shopping_count': shopping_count,
+        'restaurant_count': restaurants_count,
+        'markdown_ai_analysis': markdown_ai_analysis
+    })
+
+if __name__ == "__main__":
+    app.run(debug=True)

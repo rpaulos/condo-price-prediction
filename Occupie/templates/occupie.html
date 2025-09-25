@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>OccuPie Maps</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mapping.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Header with logo and navigation bar section-->
+            <header>
+                <div class="logo-section">
+                    <img src="{{ url_for('static', filename='images/Navigation/Logo.png') }}" 
+                        alt="OccuPie" class="Logo">
+                    <!-- <span class="company-name">OCCUPIE</span> -->
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('landing') }}#home">Home</a></li>
+                        <li><a href="{{ url_for('landing') }}#features">Features</a></li>
+                        <li><a href="{{ url_for('landing') }}#tech-stack">Tech Stack</a></li>
+                        <li><a href="{{ url_for('landing') }}#developers">Developers</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+        <main>
+
+            <!-- Property details form and map section-->
+            <section class="hero-valuation-section">
+                <div class="hero-valuation-main-container">
+                    <div class="hero-valuation-title-container">
+                        <h2>
+                            <span>Pin</span> 
+                            <span>and</span> 
+                            <span>Begin,</span> 
+                            <span>Let</span> 
+                            <span>the</span> 
+                            <span>Slice</span> 
+                            <span>Spin</span>
+                        </h2>
+                        <p>Type it in, place it on the map, and get your slice of insights.</p>
+                    </div>
+                    <div class="hero-valuation-form-map-container">
+                        <div class="hero-valuation-property-details-form">
+                            <!-- Property details form -->
+                            <form action="/submit" method="POST" id="valuationForm">
+                                <div class="header-of-form-container">
+                                    <img src="{{ url_for('static', filename='images/Property_Details.png') }}" class="Icon">
+                                    <h3>Property Details</h3>
+                                </div>
+
+                                <!-- Name of the condo -->
+                                <div class="input-field-group">
+                                    <label for="name-of-condo">Condo Name:</label>
+                                    <input type="text" id="name-of-condo" name="name-of-condo" placeholder="e.g. Sentinel Residence"/>
+                                </div>
+
+                                <!-- Neighborhood location of condo -->
+                                <div class="input-drop-down-group">
+                                    <label for="neighborhood">Neighborhood:</label>
+                                    <select id="neighborhood" name="neighborhood">
+                                        <option value="" disabled selected>Select Neighborhood</option>
+                                        <option value="Cubao">Cubao</option>
+                                        <option value="Diliman">Diliman</option>
+                                        <option value="New Manila">New Manila</option>
+                                        <option value="Project 2">Project 2</option>
+                                        <option value="Project 3">Project 3</option>
+                                        <option value="Project 4">Project 4</option>
+                                        <option value="Project 5">Project 5</option>
+                                        <option value="Project 6">Project 6</option>
+                                        <option value="Project 7">Project 7</option>
+                                        <option value="Project 8">Project 8</option>
+                                        <option value="Project 9">Project 9</option>
+                                        <option value="Project 10">Project 10</option>
+                                        <option value="Project 11">Project 11</option>
+                                        <option value="Project 12">Project 12</option>
+                                        <option value="Project 13">Project 13</option>
+                                        <option value="Sikatuna Village">Sikatuna Village</option>
+                                    </select>
+                                </div>
+
+                                <!-- Type of furnishing -->
+                                <div class="input-drop-down-group">
+                                    <label for="type-of-furnishing">Furnishing:</label>
+                                    <select id="type-of-furnishing" name="type-of-furnishing">
+                                        <option value="" disabled selected>Select Furnishing Type</option>
+                                        <option value="Unfurnished">Unfurnished</option>
+                                        <option value="Semi Furnished">Semi-Furnished</option>
+                                        <option value="Fully Furnished">Fully-Furnished</option>
+                                    </select>
+                                </div>
+
+                                <!-- Size of condo -->
+                                <div class="input-field-group">
+                                    <label for="size-of-condo">Size (sqm):</label>
+                                    <input type="number" id="size-of-condo" name="size-of-condo" min="12", max="500", value="12"/>
+                                </div>
+
+                                <!-- Number of bedrooms and bathrooms -->
+                                <div class="container-for-bed-bath">
+                                    <div class="container-of-bedrooms">
+                                        <label for="count-of-bedrooms">Bedrooms:</label>
+                                        <input type="number" id="count-of-bedrooms" name="count-of-bedrooms" min="0" max="15" value="1" /> 
+                                    </div>
+                                    <div class="container-of-bathrooms">
+                                        <label for="count-of-bathrooms">Bathrooms:</label>
+                                        <input type="number" id="count-of-bathrooms" name="count-of-bathrooms" min="0" max="15" value="1" /> 
+                                    </div>
+                                </div>
+
+                                <!-- Header of amenities section -->
+                                <div class="header-of-form-container">
+                                    <img src="{{ url_for('static', filename='images/Amenities.png') }}" class="Icon">
+                                    <h3>Amenities</h3>
+                                </div>
+
+                                <!-- Amenities checkboxes -->
+                                <div class="amenities-container">
+                                    <div class="amenities-column">
+                                        <label><input type="checkbox" name="amenities" value="Security">Security</label>
+                                        <label><input type="checkbox" name="amenities" value="Airconditioning">AC Unit</label>
+                                        <label><input type="checkbox" name="amenities" value="Parking">Parking</label>
+                                        <label><input type="checkbox" name="amenities" value="Balcony">Balcony</label>
+                                        <label><input type="checkbox" name="amenities" value="Study Hall">Study Hall</label>
+                                    </div>
+                                    <div class="amenities-column">
+                                        <label><input type="checkbox" name="amenities" value="Swimming Pool">Pool</label>
+                                        <label><input type="checkbox" name="amenities" value="Multi-Purpose Hall">Event Space</label>
+                                        <label><input type="checkbox" name="amenities" value="Function Rooms">Function Room</label>
+                                        <label><input type="checkbox" name="amenities" value="Gym">Gym</label>
+                                        <label><input type="checkbox" name="amenities" value="Concierge">Concierge</label>
+                                    </div>
+                                </div>
+
+                                <!-- Submit button -->
+                                <div class="submit-button-container">
+                                    <!-- <button type="submit" onClick="searchLocation()">Evaluate Condo</button> -->
+                                    <button type="submit" onClick="searchLocation()" id="submit-button-real">Evaluate Condo</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="map-container" id="map-container">
+                            <!-- <h2>THIS IS WHERE THE MAP GOES</h2> -->
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.279900492!2d-74.25987368713244!3d40.69767006345486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5f9407af3%3A0xf6f7d1f1e9a317b!2sNew%20York%2C%20USA!5e0!3m2!1sen!2s!4v1695373387468!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                            <div id="loader" class="loader" style="display: none;"></div>
+                        </div>
+                        <script src="{{ url_for('static', filename='js/mapping.js') }}"></script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpmEpAWxwXkFP7bFvVVeo9PaBSbEuvrVI&libraries=places&callback=initMap" async defer></script>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results section to show the predicted rent, demand, etc... -->
+            <section class="results-section">
+                <!-- Predicted rent and demand -->
+                <div class="results-main-container">
+                    <div class="results-rent-occupancy-main-container">
+                        <div class="rent-demand-results-container">
+                            <h2>Estimated Monthly Rental</h2>
+                            <h1 id="monthly-rent-prediction">Php. 0.00</h1>
+                            <p>Based on location, amenities, nearby establishments, and competitor analysis</p>
+                        </div>
+                        <div class="rent-demand-results-container">
+                            <h2>Occupancy Demand</h2>
+                            <h1 id="demand-prediction">0%</h1>
+                            <p>Based on price, market trends, amenities, seasonality, and nearby establishment analysis</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Summary of nearby establishmetns -->
+                    <div class="nearby-establishments-summary-results-container">
+                        <!-- Nearby schools -->
+                        <div class="establishment-card">
+                            <div class="icon-container">
+                                <img src="{{ url_for('static', filename='images/Education.png') }}" class="Icon">
+                            </div>
+                            <h3>Education</h3>
+                            <h2 id="nearby-education">0</h2>
+                            <p>Schools Nearby</p>
+                        </div>
+                        <!-- Nearby malls and stores -->
+                        <div class="establishment-card">
+                            <div class="icon-container">
+                                <img src="{{ url_for('static', filename='images/Shopping.png') }}" class="Icon">
+                            </div>
+                            <h3>Shopping</h3>
+                            <h2 id="nearby-shopping">0</h2>
+                            <p>Malls & Stores</p>
+                        </div>
+                        <!-- Nearby transportation hubs -->
+                        <div class="establishment-card">
+                            <div class="icon-container">
+                                <img src="{{ url_for('static', filename='images/Transportation.png') }}" class="Icon">
+                            </div>
+                            <h3>Transportation</h3>
+                            <h2 id="nearby-transportation">0</h2>
+                            <p>Transit Options</p>
+                        </div>
+                        <!-- Nearby medical facilities -->
+                        <div class="establishment-card">
+                            <div class="icon-container">
+                                <img src="{{ url_for('static', filename='images/Healthcare.png') }}" class="Icon">
+                            </div>
+                            <h3>Healthcare</h3>
+                            <h2 id="nearby-healthcare">0</h2>
+                            <p>Medical Facilities</p>
+                        </div>
+                        <!-- Nearby restaurants -->
+                        <div class="establishment-card">
+                            <div class="icon-container">
+                                <img src="{{ url_for('static', filename='images/Restaurant.png') }}" class="Icon">
+                            </div>
+                            <h3>Restaurant</h3>
+                            <h2 id="nearby-restaurant">0</h2>
+                            <p>Dining Options</p>
+                        </div>
+                    </div>
+
+                    <!-- AI analysis -->
+                    <div class="gemini-ai-analysis-main-container">
+                        <div class="gemini-ai-analysis-results-container">
+                            <!-- Text goes here -->
+                             <h1>AI Analysis</h1>
+                             <div id="ai-analysis-text">
+                                OCCUPIE, Your Smart AI Property Analyst, Powered by Google Gemini!
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer section -->
+            <footer>
+                <div class="footer-wrapper">
+                    <div class="footer-left">
+                        <!-- Thank you message for using occupie -->
+                        <div class="footer-occupie-thanks-main-container">
+                            <div class="footer-occupie-container">
+                                <img src="{{ url_for('static', filename='images//Footer//Footer_logo.png') }}" class="Logo">
+                                <!-- <h2>OCCUPIE</h2> -->
+                            </div>
+                            <div class="footer-thanks-container">
+                                <p>Thanks for taking a slice of OccuPie! We hope our predictions left you full of insights, not just data.</p>
+                                <p>OccuPie &copy; 2025 - Serving smarter condo insights.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-right">
+                        <!-- Navigation links to other pages -->
+                        <div class="footer-navigation-links-main-container">
+                            <div class="footer-navigation">
+                                <h2>Navigation</h2>
+                            </div>
+                            <div class="footer-links-container">
+                                <ul>
+                                    <li><a href="{{ url_for('landing') }}#home">Home</a></li>
+                                    <li><a href="{{ url_for('landing') }}#features">Features</a></li>
+                                    <li><a href="{{ url_for('landing') }}#tech-stack">Tech Stack</a></li>
+                                    <li><a href="{{ url_for('landing') }}#developers">Developers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Follow our socials links -->
+                        <div class="footer-follow-us-socials-main-container">
+                            <div class="footer-follow-us-container">
+                                <h2>Follow Us</h2>
+                            </div>
+                            <div class="footer-socials-container">
+                                <ul>
+                                    <li><a href="https://github.com/rpaulos/condo-price-prediction">GitHub</a></li>
+                                    <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
+                                    <li><a href="https://www.facebook.com/QCGov">Facebook</a></li>
+                                    <li><a href="https://x.com/GenshinImpact?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </body>
+</html>

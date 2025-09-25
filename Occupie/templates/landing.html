@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OccuPie - Occupancy Demand Just Got Predictable</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-background"></div>
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <!-- <img src="Resources/Navigation/Logo.png" alt="OccuPie Logo"> -->
+                    <img src="{{ url_for('static', filename='images/Navigation/Logo.png') }}" 
+                        alt="OccuPie">
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#tech-stack">Tech Stack</a>
+                    <a href="#overview">Overview</a>
+                    <a href="#developers">Developers</a>
+                </div>
+                <div class="nav-cta">
+                    <!-- <img src="Resources/Navigation/CTA Logo.png" alt="Logo"> -->
+                    <img src="{{ url_for('static', filename='images/Navigation/CTA_Logo.png') }}" 
+                        alt="Logo">
+                    <span><a href="{{ url_for('valuation') }}">Try OccuPie</a></span>
+                </div>
+                <!-- Decorative Line -->
+                <div class="decorative-line">
+                    <img src="{{ url_for('static', filename='images/Navigation/Line.png') }}" alt="">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="landing-page">
+            <div class="content-wrapper">
+
+                <!-- Hero Section -->
+                <section class="hero-section" id="home">
+                    <div class="hero-content">
+                        <div class="tagline">
+                            <div class="logo-icon">
+                                <img src="Resources/3c2a8d84297973d9d58c5be9af4cab07c3f7f183.png" alt="OccuPie Icon">
+                            </div>
+                            <h1 class="hero-title">
+                                <span class="gradient-text">Ohhhh-ccupancy</span>
+                                <span class="normal-text">demand</span>
+                            </h1>
+                            <h1 class="hero-subtitle">just got predictable</h1>
+                        </div>
+                        <p class="hero-description">
+                            Behind the scenes, OccuPie applies Multiple Linear Regression to estimate condo pricing and Logistic Regression to predict occupancy demand trends
+                        </p>
+                    </div>
+                    <div class="hero-building">
+                        <!-- <img src="Resources/d4e4495fa6525fb60299fee41557125b4cd731e3.png" alt="City Building"> -->
+                        <img src="{{ url_for('static', filename='images/City_Building.png') }}" alt="City Building">
+                    </div>
+                    <div class="hero-gradient"></div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="features-section" id="features">
+                    <h2 class="section-title gradient-text">What We Cooked Inside OccuPie</h2>
+                    <p class="section-description">
+                        OccuPie isn't just a tasty name—it's packed with features that make condo predictions smarter, clearer, and a whole lot more fun.
+                    </p>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <!-- <img src="Resources/c431bc7a358ca81976fdac0e9b4a28bbb7a5c836.svg" alt="Map Icon"> -->
+                                <img src="{{ url_for('static', filename='images/Map_Icon.svg') }}" 
+                                    alt="Map Icon">
+                            </div>
+                            <div class="feature-content">
+                                <h3>Find Your Slice<br>on the Map</h3>
+                                <p>Type in a condo, and OccuPie serves up its location along with nearby establishments—so you see not just the unit, but the community around it.</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="{{ url_for('static', filename='images/AI_Icon.svg') }}" 
+                                    alt="AI Icon">
+                            </div>
+                            <div class="feature-content">
+                                <h3>Slice the Numbers<br>with AI</h3>
+                                <p>Using MLR for condo pricing and Logistic Regression for occupancy demand, OccuPie turns raw data into clear, reliable predictions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="{{ url_for('static', filename='images/LLM_Icon.svg') }}" 
+                                    alt="LLM Icon">
+                            </div>
+                            <div class="feature-content">
+                                <h3>A Bigger Bite<br>with LLMs</h3>
+                                <p>Beyond numbers, OccuPie uses LLMs to analyze and explain results—making insights easy to understand, even without a math degree.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tech Stack Section -->
+                <section class="tech-stack-section" id="tech-stack">
+                    <div class="tech-stack-container">
+                        <div class="tech-stack-scroll">
+                            <div class="tech-icons">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/VS Code.png') }}" alt="VS Code">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Python.png') }}" alt="Python">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Figma.png') }}" alt="Figma">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Google Maps.png') }}" alt="Google Maps">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/HTML.png') }}" alt="HTML">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/CSS.png') }}" alt="CSS">
+                                <!-- Repeat for infinite scroll effect -->
+                                <img src="{{ url_for('static', filename='images/Tech Stack/VS Code.png') }}" alt="VS Code">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Python.png') }}" alt="Python">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Figma.png') }}" alt="Figma">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Google Maps.png') }}" alt="Google Maps">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/HTML.png') }}" alt="HTML">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/CSS.png') }}" alt="CSS">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/VS Code.png') }}" alt="VS Code">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Python.png') }}" alt="Python">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Figma.png') }}" alt="Figma">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Google Maps.png') }}" alt="Google Maps">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/HTML.png') }}" alt="HTML">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/CSS.png') }}" alt="CSS">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/VS Code.png') }}" alt="VS Code">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Python.png') }}" alt="Python">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Figma.png') }}" alt="Figma">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/Google Maps.png') }}" alt="Google Maps">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/HTML.png') }}" alt="HTML">
+                                <img src="{{ url_for('static', filename='images/Tech Stack/CSS.png') }}" alt="CSS">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- UI Preview Section -->
+                <section class="preview-section" id="overview">
+                    <h2 class="section-title">Have a Taste of the UI</h2>
+                    <p class="section-description">
+                        Here's a first look at what we've been baking inside OccuPie. From maps to predictions, get a taste of the UI before you dig in.
+                    </p>
+                    <div class="preview-container">
+                        <div class="preview-card preview-left">
+                            <img src="{{ url_for('static', filename='images/Overview/ui_preview_1.png') }}"
+                                alt="OccuPie UI Preview 1">
+                        </div>
+                        <div class="preview-card preview-center">
+                            <img src="{{ url_for('static', filename='images/Overview/ui_preview_2.png') }}"
+                                alt="OccuPie UI Preview 2">
+                        </div>
+                        <div class="preview-card preview-right">
+                            <img src="{{ url_for('static', filename='images/Overview/ui_preview_3.png') }}"
+                                alt="OccuPie UI Preview 3">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Developers Section -->
+                <section class="developers-section" id="developers">
+                    <div class="developers-bg">
+                        <!-- <img src="Resources/0cf5a680c6e15646507555613d2a37030e49210a.png" alt="Background"> -->
+                        <img src="{{ url_for('static', filename='images/developers_background.png') }}"
+                            alt="Background for developers">
+                    </div>
+
+                        <div class="developers-header">
+                            <h2 class="section-title">Meet the Pie-oneers</h2>
+                            <p class="developers-section-description">
+                                Our secret recipe? A generous scoop of regression models, a handful of creativity, and a sprinkle of teamwork. Together, we cooked up OccuPie.
+                            </p>
+                        </div>
+
+                    <div class="developers-grid">
+                        <div class="developer-card">
+                            <div class="developer-photo">
+                                <img src="{{ url_for('static', filename='images//Developers//Kurt.png') }}" alt="Kurt Justine Almadrones">
+                            </div>
+                            <div class="developer-info">
+                                <h3>Kurt Justine Almadrones</h3>
+                                <p class="role">Role | Role | Role</p>
+                                <p class="description">Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/justjstine" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//github.png') }}" 
+                                            alt="Github">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/kurt-justine-almadrones-964765195/" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//linkedIn.png') }}" 
+                                            alt="LinkedIn">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="developer-card">
+                            <div class="developer-photo">
+                                <img src="{{ url_for('static', filename='images//Developers//Lance.png') }}" alt="Lance Kenneth Dela Paz">
+                            </div>
+                            <div class="developer-info">
+                                <h3>Lance Kenneth Dela Paz</h3>
+                                <p class="role">Role | Role | Role</p>
+                                <p class="description">Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/lowvey" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//github.png') }}" 
+                                            alt="Github">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/lance-kenneth-dela-paz-a26567386" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//linkedIn.png') }}" 
+                                            alt="LinkedIn">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="developer-card">
+                            <div class="developer-photo">
+                                <img src="{{ url_for('static', filename='images//Developers//Leon.png') }}" alt="Leon Marco Devela">
+                            </div>
+                            <div class="developer-info">
+                                <h3>Leon Marco Devela</h3>
+                                <p class="role">Role | Role | Role</p>
+                                <p class="description">Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/leonnmarcoo" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//github.png') }}" 
+                                            alt="Github">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/leon-marco-devela-ba861026b/" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//linkedIn.png') }}" 
+                                            alt="LinkedIn">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="developer-card">
+                            <div class="developer-photo">
+                                <img src="{{ url_for('static', filename='images//Developers//Rae.png') }}" alt="Rae Pogi">
+                            </div>
+                            <div class="developer-info">
+                                <h3>Rae Paulos</h3>
+                                <p class="role">Role | Role | Role</p>
+                                <p class="description">Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/rpaulos" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//github.png') }}" 
+                                            alt="Github">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/rae-paulos-8969b5249/" class="social-link">
+                                        <img src="{{ url_for('static', filename='images//linkedIn.png') }}" 
+                                            alt="LinkedIn">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images//Footer//Footer_logo.png') }}" alt="OccuPie Logo">
+                    <p class="footer-description">
+                        Thanks for taking a slice of OccuPie! We hope our predictions left you full of insights, not just data.
+                    </p>
+                    <p class="copyright">
+                        OccuPie © 2025 — Serving smarter condo insights.
+                    </p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#tech-stack">Tech Stack</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#developers">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://github.com/rpaulos/condo-price-prediction">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/QCGov">Facebook</a></li>
+                        <li><a href="https://x.com/GenshinImpact?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Scroll Animations -->
+        <script src="{{ url_for('static', filename='js//scroll-animations.js') }}"></script>
+    </body>
+</html>

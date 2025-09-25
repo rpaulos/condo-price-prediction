@@ -1,0 +1,589 @@
+/* Apply to all */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply to all under the Body section */
+body {
+    font-family: Poppins, helvetica;
+    margin: 0;
+    /* max-width: 1500px; */
+    margin: 0 auto;
+}
+
+main {
+    padding-left: 40px; 
+    padding-right: 40px; 
+    box-sizing: border-box;
+}
+
+/* Header Section */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Poppins, helvetica;
+
+    /* Background */
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);        
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 0px;
+    padding: 20px;
+    padding-left: 75px;
+    padding-right: 75px; 
+    width: 100%;
+
+}
+
+header,
+footer {
+    width: 100%;
+}
+
+body {
+    font-family: Poppins, helvetica;
+    margin: 0;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* main, section {
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+} */
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    height: 40px;
+    width: auto;
+}
+
+.company-name {
+    font-family: Poppins, helvetica;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #4279F6, #1550EC); /* direction + colors */
+    -webkit-background-clip: text;  /* show background only where text is */
+    -webkit-text-fill-color: transparent; /* make the actual text fill transparent */
+    background-clip: text;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff; 
+}
+
+/* Hero valuation section */
+.hero-valuation-property-details-form {
+    transition: transform 0.3s ease; /* smooth grow/shrink */
+}
+
+.hero-valuation-property-details-form:hover {
+    transform: scale(1.05); /* slightly larger on hover */
+}
+
+/* Container for the title of the valuation section */
+.hero-valuation-title-container {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.hero-valuation-title-container h2 {
+    font-size: 42px;
+    font-weight: 550;
+    margin-bottom: 0;
+    /* no gradient here */
+    color: #1550EC; /* fallback for text outside span */
+}
+
+.hero-valuation-title-container h2 span {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-image 0.3s ease;
+    background: linear-gradient(to right, #4279F6, #1550EC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-valuation-title-container h2 span:hover {
+    transform: scale(1.2);
+    background-image: linear-gradient(to right, #70fff1, #3cd9de);
+}
+
+
+.hero-valuation-title-container p {
+    font-size: 18px;
+    color: #6D6D6D;
+}
+
+/* Property details and map container */
+.hero-valuation-form-map-container {
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 4px;
+    /* height: 575px; */
+
+    /* padding-bottom: 40px;
+    padding-right: 40px;
+    padding-left: 40px; */
+    gap: 30px;
+}
+
+.hero-valuation-property-details-form {
+    content: "";
+    display: table;
+    clear: both;
+    padding: 10px;
+    border-radius: 20px;
+
+    /* Raised effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Glow effect around the border */
+    outline-offset: -2px;                    /* align with border if you use outline */
+    box-shadow: 0 0 10px #4279F6,             /* soft blue glow */
+                0 0 20px #1550EC;
+    background-color: #fff;                  /* make sure background is solid so glow shows */
+}
+
+.header-of-form-container {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;  /* vertically center image and text */
+    gap: 10px;            /* space between image and text */
+
+}
+
+.header-of-form-container .Icon {
+    width: 32px;          /* set the icon size as you prefer */
+    height: 32px;
+}
+
+.header-of-form-container h3 {
+    background: linear-gradient(to right, #4279F6, #1550EC); /* direction + colors */
+    -webkit-background-clip: text;  /* show background only where text is */
+    -webkit-text-fill-color: transparent; /* make the actual text fill transparent */
+    background-clip: text;
+}
+
+/* Input stuff to the form */
+.input-field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-field-group label {
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.input-field-group input[type="text"],
+.input-field-group input[type="number"],
+.input-drop-down-group select {
+    width: 260px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 6px 12px;
+    font-size: 16px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #D7E3FD;
+}
+
+.input-drop-down-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-drop-down-group label {
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.container-for-bed-bath {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.container-for-bed-bath > div {
+    flex: 1;
+}
+
+.container-of-bedrooms,
+.container-of-bathrooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.container-of-bedrooms input,
+.container-of-bathrooms input {
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #D7E3FD;
+}
+
+.amenities-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.amenities-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.amenities-column label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.amenities-column input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #4279F6;
+    cursor: pointer;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#submit-button-real {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4279F6; 
+    color: white;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 75%;
+}
+
+#submit-button-real:hover {
+    background-color: #1550EC;
+}
+
+.map-container {
+    flex: 1;
+    min-height: 400px;
+    /* box-sizing: border-box; */
+    /* border: blue;
+    border-style: dashed; */
+    display: flex;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+    transform: scale(1.05); /* slightly larger on hover */
+}
+
+.map-container iframe {
+    flex: 1;              /* make iframe fill the .map-container */
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+
+/* Results section to show the predicted rent, demand, etc... */
+.results-main-container {
+
+}
+
+.results-rent-occupancy-main-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    /* margin: 20px; */
+}
+
+.rent-demand-results-container {
+    flex: 1;
+    min-width: 0;
+    background: linear-gradient(to right, #4279F6, #1550EC);
+    color: white; 
+    padding: 20px; 
+    border-radius: 15px;  
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rent-demand-results-container:hover {
+    transform: scale(1.05);   
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);  /* optional shadow for depth */
+}
+
+.rent-demand-results-container h1{
+    font-size: 50px;
+}
+
+.rent-demand-results-container p{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.nearby-establishments-summary-results-container {
+    display: flex;          /* lay cards in a row */
+    gap: 20px;              /* space between cards */
+    justify-content: space-between; /* spread them evenly */
+    align-items: stretch;   /* make all cards the same height if needed */
+    flex-wrap: nowrap;      /* keep them on one line (remove if you want wrap) */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.establishment-card {
+    flex: 1;
+    text-align: center; 
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 0;
+    border: #4279F6;
+    border-style: ridge;
+    border-width: 2px;
+    margin-top: 10px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.establishment-card:hover {
+    transform: scale(1.05); /* grow the card slightly */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* stronger shadow when hovered */
+}
+
+.establishment-card h3,
+.establishment-card h2 {
+    background: linear-gradient(to right, #4279F6, #1550EC); /* direction + colors */
+    -webkit-background-clip: text;  /* show background only where text is */
+    -webkit-text-fill-color: transparent; /* make the actual text fill transparent */
+    background-clip: text;
+}
+
+.establishment-card h2 {
+    font-size: 50px;
+}
+
+.gemini-ai-analysis-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    margin-top: 20px;
+    
+}
+
+.gemini-ai-analysis-results-container {
+    width: 100%;
+    padding: 50px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Glow effect around the border */
+    outline-offset: -2px;                    /* align with border if you use outline */
+    box-shadow: 0 0 10px #4279F6,             /* soft blue glow */
+                0 0 20px #1550EC;
+    background-color: #fff; 
+    margin-bottom: 20px;
+    text-align: justify;
+    min-height: 400px;
+}
+
+.gemini-ai-analysis-results-container h1{
+    background: linear-gradient(to right, #4279F6, #1550EC); /* direction + colors */
+    -webkit-background-clip: text;  /* show background only where text is */
+    -webkit-text-fill-color: transparent; /* make the actual text fill transparent */
+    background-clip: text;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    background-color: #1550EC;
+    color: white;
+    padding: 20px;
+    padding: 60px 20px;
+}
+
+.footer-left {
+    max-width: 500px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 50px;
+    color: white;
+}
+
+.footer-right ul {
+    list-style: none;
+    color: white;
+}
+
+.footer-links-container ul li a,
+.footer-socials-container ul li a {
+    text-decoration: none;  /* removes underline */
+    color: white;            /* set font color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links-container ul li a:hover,
+.footer-socials-container ul li a:hover {
+    color: #949494;
+}
+
+.footer-occupie-thanks-main-container {
+    
+}
+
+.footer-occupie-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    
+}
+
+.footer-occupie-container img{
+    max-height: 35px;
+    max-width: auto;
+}
+
+.footer-thanks-container {
+    padding-top: 20px;
+}
+
+.loader {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50px;
+  height: 80px;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  position: relative;
+  background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
+  background-size: 2px 40px;
+  background-position: 50% 0px;
+  animation: spinx 5s linear infinite;
+}
+.loader:before, .loader:after {
+  content: "";
+  width: 40px;
+  left: 50%;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  transform: translatex(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 0 0 20px 20px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0px;
+  animation: lqt 5s linear infinite;
+}
+.loader:after {
+  top: auto;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  animation: lqb 5s linear infinite;
+}
+
+.Icon {
+    height: 20px;
+    width: auto;
+}
+@keyframes lqt {
+  0%, 100% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0% 0px;
+  }
+  50% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0% 40px;
+  }
+  50.1% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0% -40px;
+  }
+}
+@keyframes lqb {
+  0% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0 40px;
+  }
+  100% {
+    background-image: linear-gradient(#FF3D00 40px, transparent 0);
+    background-position: 0 -40px;
+  }
+}
+@keyframes spinx {
+  0%, 49% {
+    transform: rotate(0deg);
+    background-position: 50% 36px;
+  }
+  51%, 98% {
+    transform: rotate(180deg);
+    background-position: 50% 4px;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 50% 36px;
+  }
+}
+    
