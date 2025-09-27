@@ -23,8 +23,7 @@
 - [Demand Prediction](#demand)
 - [Nearby Establishments](#nearby)
 - [AI Analyst](#gemini)
-- [Repository Structure](#repository-structure)
-- [How to Access PinPoint](#how-to-access-occupie-locally)
+- [How to Access OccuPie](#how-to-access-occupie-locally)
 - [Team Details](#team-details)
 
 ---
