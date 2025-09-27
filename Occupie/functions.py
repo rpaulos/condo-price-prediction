@@ -146,13 +146,26 @@ def reverse_geocode(condo_name, neighborhood):
 def place(condo_name, neighborhood):
     gmaps = googlemaps.Client(googlemaps_api_key)
     
-    if not condo_name:
-        query = f'{neighborhood}, Quezon City, Philippines'
+    # if not condo_name:
+    #     query = f'{neighborhood}, Quezon City, Philippines'
+    # else:
+    #     query = f'{condo_name}, {neighborhood}, Quezon City, Philippines'
+
+    if condo_name and neighborhood:
+        address = f"{condo_name}, {neighborhood}, Quezon City, Philippines"
+
+    elif neighborhood:  # condo_name is empty, neighborhood is not
+        address = f"{neighborhood}, Quezon City, Philippines"
+
+    elif condo_name:    # neighborhood is empty, condo_name is not
+        address = condo_name
+
     else:
-        query = f'{condo_name}, {neighborhood}, Quezon City, Philippines'
+        address = "Cubao, Quezon City, Philippines"
+
 
     results = gmaps.find_place(
-        input=query,
+        input=address,
         input_type='textquery',
         fields=['place_id', 'geometry']
     )
@@ -163,9 +176,18 @@ def place(condo_name, neighborhood):
         lat = candidate['geometry']['location']['lat']
         lng = candidate['geometry']['location']['lng']
 
-        return place_id, lat, lng
+        rev = gmaps.reverse_geocode((lat, lng))
+        city = None
+        country = None
+        if rev:
+            for comp in rev[0]['address_components']:
+                if 'locality' in comp['types']:
+                    city = comp['long_name'].lower()
+                    break
+
+        return city, place_id, lat, lng
     
-    return None, None, None
+    return None, None, None, None
 
 
 # Get the ratings and number of ratings

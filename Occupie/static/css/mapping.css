@@ -20,17 +20,17 @@ main {
 }
 
 /* Header Section */
-header {
+/* header {
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: Poppins, helvetica;
+    font-family: Poppins, helvetica; */
 
     /* Background */
-    background: rgba(255, 255, 255, 0.2); 
+    /* background: rgba(255, 255, 255, 0.2); 
     backdrop-filter: blur(10px);        
     -webkit-backdrop-filter: blur(10px); 
     border: 1px solid rgba(255, 255, 255, 0.3); 
@@ -40,7 +40,8 @@ header {
     padding-right: 75px; 
     width: 100%;
 
-}
+} */
+
 
 header,
 footer {
@@ -92,19 +93,19 @@ nav a {
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
+/* 
 nav a:hover {
     color: #007bff; 
-}
+} */
 
 /* Hero valuation section */
-.hero-valuation-property-details-form {
-    transition: transform 0.3s ease; /* smooth grow/shrink */
+/* .hero-valuation-property-details-form {
+    transition: transform 0.3s ease; 
 }
 
 .hero-valuation-property-details-form:hover {
-    transform: scale(1.05); /* slightly larger on hover */
-}
+    transform: scale(1.05); 
+} */
 
 /* Container for the title of the valuation section */
 .hero-valuation-title-container {
@@ -596,4 +597,102 @@ nav a:hover {
 #valuationForm input:valid,
 #valuationForm select:valid {
     border: 2px solid rgb(239, 239, 239);
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+}
+
+.nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcfeff;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 122px;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #010219;
+    font-size: 24px;
+    font-weight: 400;
+    transition: color 0.5s ease;
+}
+
+.nav-links a:hover {
+    color: #4279f6;
+}
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    /* border: 1px solid #fcfeff; */
+    background: linear-gradient(135deg, #4279f6, #1550EC);
+    color: #fcfeff;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-cta:hover {
+    box-shadow: 0 0 12px 2px rgba(66, 121, 246, 0.3), 0 0 24px 6px rgba(21, 80, 236, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-cta img {
+    height: 30px;
+    width: 28px;
+}
+
+/* Decorative Line */
+.decorative-line {
+    position: absolute;
+    top: 82px;
+    left: 122px;
+    width: 1196px;
+    height: 2px;
+}
+
+.decorative-line img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-valuation-section {
+    padding-top: 120px;
 }
