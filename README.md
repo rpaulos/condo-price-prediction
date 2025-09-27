@@ -271,5 +271,5 @@ You can access the OccuPie repository by pressing the button below or by manuall
 </table>
 
 <div align="center">
-  <img src="https://i.imgur.com/3Vbzw56.png" />
+  <img src="https://i.imgur.com/LAzloUI.png" />
 </div>
