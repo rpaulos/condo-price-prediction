@@ -198,10 +198,11 @@ python backend.py
 http://127.0.0.1:5000
 ```
 
-<p align="justify" style="font-size: 16px; line-height: 1.6;">
-You can access Occupie repository by pressing the button below or by manually entering the link (https://github.com/rpaulos/condo-price-prediction) into your browser.
-</p>
+<h2 id="how-to-access-occupie-online"> 📶 How to Access OccuPie online</h2>
 
+<p align="justify" style="font-size: 16px; line-height: 1.6;">
+You can access the OccuPie repository by pressing the button below or by manually entering the link (https://github.com/rpaulos/condo-price-prediction) into your browser.
+</p>
 
 <p align="center">
   <a href="https://github.com/rpaulos/condo-price-prediction">
@@ -216,7 +217,7 @@ You can access Occupie repository by pressing the button below or by manually en
 <table align="center" width="100%">
   <tr>
     <!-- Rae -->
-    <td align="center" width="33%">
+    <td align="center" width="25%">
       <img src="https://i.imgur.com/xHKeiUq.png" alt="Rae Paulos" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Rae Paulos</strong><br>
       <p align="center">
@@ -229,7 +230,7 @@ You can access Occupie repository by pressing the button below or by manually en
       </p>
     </td>
     <!-- Leon -->
-    <td align="center" width="33%">
+    <td align="center" width="25%">
       <img src="https://i.imgur.com/noZCXby.png" alt="Leon Marco" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Leon Marco Devela</strong><br>
       <p align="center">
@@ -242,7 +243,7 @@ You can access Occupie repository by pressing the button below or by manually en
       </p>
     </td>
     <!-- Kurt Almadrones -->
-    <td align="center" width="33%">
+    <td align="center" width="25%">
       <img src="https://i.imgur.com/xHKeiUq.png" alt="Kurt Justine Almadrones" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Kurt Almadrones</strong><br>
       <p align="center">
@@ -255,8 +256,8 @@ You can access Occupie repository by pressing the button below or by manually en
       </p>
     </td>
     <!-- Lance Kenneth -->
-    <td align="center" width="33%">
-      <img src="https://i.imgur.com/xHKeiUq.png" alt="Rae Paulos" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
+    <td align="center" width="25%">
+      <img src="https://i.imgur.com/xHKeiUq.png" alt="Lance Kenneth Dela Paz" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Lance Kenneth Dela Paz</strong><br>
       <p align="center">
         <a href="https://github.com/lowvey">
