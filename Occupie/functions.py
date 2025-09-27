@@ -3,6 +3,7 @@ import folium
 import pickle
 
 import streamlit as st
+import numpy as np
 import pandas as pd
 import google.generativeai as genai
 
@@ -379,11 +380,16 @@ def multiple_linear_regression_model(formatted_data):
     with open('mlr_model2.pkl', 'rb') as f:
         model = pickle.load(f)
 
-    predictiction = model.predict(formatted_data)
-    
-    predictiction = predictiction.tolist()
+    prediction = model.predict(formatted_data)
 
-    return predictiction
+    # prediction = [round(val / 1000) * 1000 for val in prediction]
+    
+    # Round the prediction result to the nearest thousand
+    prediction = np.round(prediction / 1000) * 1000
+    
+    prediction = prediction.tolist()
+
+    return prediction
 
 # Logistic Regression Model
 def logistic_regression_model(formatted_data):
@@ -453,7 +459,7 @@ def justify_condo_price(
 You are an experienced real estate analyst based in Quezon City, Philippines.
 A condo has the following details:
 
-- Name: {condo_name} or Create a descriptive and flowery name based on the features of the condo unit (Ecample: Spacious 2 bedroom 1 bath condo or Spacious family home)
+- Name: {condo_name} or Create a descriptive and flowery name based on the features of the condo unit (Example: Spacious 2 bedroom 1 bath condo or Spacious family home)
 - Neighborhood: {neighborhood}
 - Size: {size_sqm} sqm
 - Bedrooms: {bedrooms}

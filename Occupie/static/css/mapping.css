@@ -587,3 +587,13 @@ nav a:hover {
   }
 }
     
+#valuationForm select:invalid,
+#valuationForm input:invalid {
+    border: 2px solid red;
+    background-color: #fff5f5;
+}
+
+#valuationForm input:valid,
+#valuationForm select:valid {
+    border: 2px solid rgb(239, 239, 239);
+}
