@@ -19,13 +19,12 @@
 - [Tech Stack](#tech-stack)
 - [Data Acquisition](#data-acquisition-and-storage)
 - [Feature Highlights](#feature-highlights)
-- [Hero Products](#price)
-- [Pop Up Strategy](#demand)
-- [Competitor Analysis](#nearby)
-- [Agentic AI Agents](#gemini)
+- [Monthly Rent Prediction](#price)
+- [Demand Prediction](#demand)
+- [Nearby Establishments](#nearby)
+- [AI Analyst](#gemini)
 - [Repository Structure](#repository-structure)
-- [How to Access PinPoint](#how-to-access-pinpoint-online)
-- [How to Run PinPoint Locally](#how-to-run-pinpoint-locally)
+- [How to Access PinPoint](#how-to-access-occupie-locally)
 - [Team Details](#team-details)
 
 ---
@@ -110,8 +109,6 @@
 ---
 
 <h2 id="data-acquisition-and-storage">📦 Data Acquisition and Storage </h2>
-
-## Data Sources and Methodology
 
 ## Data Sources and Methodology
 
