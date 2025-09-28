@@ -114,11 +114,6 @@
   OccuPie focuses on the Quezon City condominium market, leveraging web-scraped data from Rentpad to capture detailed property information. This dataset is enhanced with geolocation and nearby establishment data from Google Maps, providing context for both rental prices and occupancy demand. Using automated scraping tools such as Selenium, BeautifulSoup, and Undetected ChromeDriver, the platform collects, cleans, and structures the data to feed its predictive models. This methodology ensures that users receive accurate, evidence-based insights tailored to the Quezon City market.
 </p>
 
-<h3> 🗺️ Data Sources </h3>
-<p align="center">
-  <img src="https://i.imgur.com/j1NYozv.png" alt="PinPoint Data Sources" width="100%"/>
-</p>
-
 ### 🏢 Condo Listings Data
 - **Source:** Rentpad (web-scraped)
 - **Process:** Data collected using Selenium, BeautifulSoup, and Undetected ChromeDriver; cleaned and structured for model input
@@ -132,8 +127,6 @@
 ---
 
 <h2 id="feature-highlights">✨ Feature Highlights </h2>
-
-<img src = "https://i.imgur.com/3pz6sPO.png" width="100%">
 
 <p align="justify" style="font-size: 16px; line-height: 1.6;">
 This section showcases OccuPie's key features that work together to provide data-driven insights for price and demand prediction. By combining advanced data collection, geospatial analysis, and machine learning models, the platform enables users to make informed decisions about condominium investments and rentals.
