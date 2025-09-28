@@ -2,13 +2,12 @@
   <img src="https://i.imgur.com/LAzloUI.png" /> 
 </div>
 <h2 align="center" id="pinpoint">Demand Just Got Predictable</h2>
-
 <p align="center">
   <a href="https://github.com/rpaulos/condo-price-prediction">
     <img src="https://img.shields.io/badge/-🏢%20OccuPie-blue?style=for-the-badge" alt="OccuPie" />
   </a>
   <a href="https://www.canva.com/design/DAGw-uexZzo/Q5nBn2KkSMCg6PWsHWlg_Q/edit?fbclid=IwY2xjawMZTTNleHRuA2FlbQIxMQABHhgOrkz-EJ9nvr1iCIGcevqiDvREcgcTkmbU_ZhjuX3jISVLY9GDu2Z4zgk-_aem_g_SkdNZJxn36IaDneFHnAA">
-    <img src="https://img.shields.io/badge/-📊%20Pitch%20Deck-gold?style=for-the-badge" alt="Final Pitch Deck" />
+    <img src="https://img.shields.io/badge/-📊%20Pitch%20Deck-white?style=for-the-badge" alt="Final Pitch Deck" />
   </a>
 </p>
 
@@ -32,7 +31,7 @@
 
 <!-- OccuPie Overview Image -->
 <p align="center">
-  <img src="https://i.imgur.com/LZv4EsL.png" alt="PinPoint Overview" width="100%"/>
+  <img src="https://i.imgur.com/TsehEk6.png" alt="PinPoint Overview" width="100%"/>
 </p>
 
 <!-- Project Description -->
