@@ -1,4 +1,4 @@
-<div>
+<img width="2000" height="2000" alt="image" src="https://github.com/user-attachments/assets/d4958f87-35ef-409e-a8da-8cd61f1f3876" /><img width="2000" height="2000" alt="image" src="https://github.com/user-attachments/assets/bed6a361-a065-45cd-803f-f8f2657f16fe" /><div>
   <img src="https://i.imgur.com/LAzloUI.png" /> 
 </div>
 <h2 align="center" id="pinpoint">Demand Just Got Predictable</h2>
@@ -209,7 +209,7 @@ You can access the OccuPie repository by pressing the button below or by manuall
   <tr>
     <!-- Rae -->
     <td align="center" width="25%">
-      <img src="https://i.imgur.com/xHKeiUq.png" alt="Rae Paulos" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
+      <img src="https://i.imgur.com/rHj8qCt.png" alt="Rae Paulos" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Rae Paulos</strong><br>
       <p align="center">
         <a href="https://github.com/rpaulos">
@@ -222,7 +222,7 @@ You can access the OccuPie repository by pressing the button below or by manuall
     </td>
     <!-- Leon -->
     <td align="center" width="25%">
-      <img src="https://i.imgur.com/noZCXby.png" alt="Leon Marco" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
+      <img src="https://i.imgur.com/W8zpfJU.png" alt="Leon Marco" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Leon Marco Devela</strong><br>
       <p align="center">
         <a href="https://github.com/leonnmarcoo">
@@ -235,7 +235,7 @@ You can access the OccuPie repository by pressing the button below or by manuall
     </td>
     <!-- Kurt Almadrones -->
     <td align="center" width="25%">
-      <img src="https://i.imgur.com/xHKeiUq.png" alt="Kurt Justine Almadrones" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
+      <img src="https://i.imgur.com/HFoS8Cs.png" alt="Kurt Justine Almadrones" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Kurt Almadrones</strong><br>
       <p align="center">
         <a href="https://github.com/justjstine">
@@ -248,7 +248,7 @@ You can access the OccuPie repository by pressing the button below or by manuall
     </td>
     <!-- Lance Kenneth -->
     <td align="center" width="25%">
-      <img src="https://i.imgur.com/xHKeiUq.png" alt="Lance Kenneth Dela Paz" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
+      <img src="https://i.imgur.com/KNey1qx.png" alt="Lance Kenneth Dela Paz" style="border-radius: 50%; width: 120px; height: 120px;"><br><br>
       <strong>Lance Kenneth Dela Paz</strong><br>
       <p align="center">
         <a href="https://github.com/lowvey">
