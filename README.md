@@ -53,7 +53,7 @@
 
 <!-- PinPoint Techstack Overview Image -->
 <p align="center">
-  <img src="https://i.imgur.com/1wEJSz2.png" alt="PinPoint Techstack Overview" width="100%"/>
+  <img src="https://i.imgur.com/bUZe7rT.png" alt="PinPoint Techstack Overview" width="100%"/>
 </p>
 
 <!-- Techstack Summary -->
