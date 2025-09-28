@@ -1,26 +1,54 @@
-    // Declare global variables
-    let map;
-    let geocoder;
-    let marker;
-    let circle;
-    let resultsData = [];
-    let nearbyMarkers = [];
+// Declare global variables
+let map;
+let geocoder;
+let marker;
+let circle;
+let resultsData = [];
+let nearbyMarkers = [];
 
-    const tags = [
-        "school", "hospital", "shopping_mall", "supermarket", "church",
-        "park", "gym", "restaurant", "bank", "pharmacy", "police",
-        "subway_station", "train_station", "university",
-        "transit_station", "bus_station"
-    ];
+const tags = [
+    "school", "hospital", "shopping_mall", "supermarket", "church",
+    "park", "gym", "restaurant", "bank", "pharmacy", "police",
+    "subway_station", "train_station", "university",
+    "transit_station", "bus_station"
+];
 
-    // This function is called by Google Maps API after it loads
-    window.initMap = function() {
-        map = new google.maps.Map(document.getElementById("map-container"), {
-            center: { lat: 14.61286, lng: 121.05457 },
-            zoom: 15,
-        });
-        geocoder = new google.maps.Geocoder();
-    };
+const category_mapping = {
+    'train_station': 'Transportation',
+    'bus_station': 'Transportation',
+    'subway_station': 'Transportation',
+    'transit_station': 'Transportation',
+    'hospital': 'Healthcare',
+    'pharmacy': 'Healthcare',
+    'police': 'Healthcare',
+    'gym': 'Healthcare',
+    'school': 'Education',
+    'university': 'Education',
+    'shopping_mall': 'Shopping',
+    'supermarket': 'Shopping',
+    'restaurant': 'Restaurants',
+    'park': 'Others',
+    'church': 'Others',
+    'bank': 'Others'    
+};
+
+const category_colors = {
+    'Transportation': 'red',
+    'Healthcare': 'green',
+    'Education': 'orange',
+    'Shopping': 'purple',
+    'Restaurants': 'blue',
+    'Others': 'yellow'
+};
+
+// This function is called by Google Maps API after it loads
+window.initMap = function() {
+    map = new google.maps.Map(document.getElementById("map-container"), {
+        center: { lat: 14.61286, lng: 121.05457 },
+        zoom: 15,
+    });
+    geocoder = new google.maps.Geocoder();
+};
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -138,13 +166,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // If no places are found, exit the function early
             if (!places || places.length === 0) return;
 
+            const category = category_mapping[tag] || 'Others';
+            const color = category_colors[category] || 'blue';
+
             // Loop through each returned place
             places.forEach(place => {
                 // Create a blue marker on the map at the place's location
                 const m = new google.maps.Marker({
                     map: map,
                     position: place.location,
-                    icon: { url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" },
+                    icon: { 
+                        url: `http://maps.google.com/mapfiles/ms/icons/${color}-dot.png` 
+                    },
                 });
 
                 // Store the created marker in the nearbyMarkers array for later reference
