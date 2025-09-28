@@ -297,30 +297,64 @@ def nearby_establishment_search(lat: float, lng: float) -> list[dict]:
     nearby_establishments = []
     place_ids = set()
 
-    tags= {
-        'school', 'hospital', 'shopping_mall', 'supermarket', 'church',
-        'park', 'gym', 'restaurant', 'bank', 'pharmacy', 'police',
-        'subway_station', 'train_station', 'university', 
-        'transit_station', 'bus_station'
+    tags = {
+        # Restaurants
+        "restaurant",
+
+        # Shopping
+        "shopping_mall",
+        "supermarket",
+
+        # Education
+        "school",
+        "university",
+
+        # Transportation
+        "subway_station",
+        "train_station",
+        "transit_station",
+        "bus_station",
+
+        # Healthcare
+        "hospital",
+        "pharmacy",
+
+        # Others
+        "bank",
+        "police",
+        "park",
+        "church",
+        "gym",
     }
 
     category_mapping = {
-        'train_station': 'Transportation',
-        'bus_station': 'Transportation',
-        'subway_station': 'Transportation',
-        'transit_station': 'Transportation',
-        'hospital': 'Healthcare',
-        'pharmacy': 'Healthcare',
-        'police': 'Healthcare',
-        'gym': 'Healthcare',
-        'school': 'Education',
-        'university': 'Education',
-        'shopping_mall': 'Shopping',
-        'supermarket': 'Shopping',
-        'restaurant': 'Restaurants',
-        'park': 'Others',
-        'church': 'Others',
-        'bank': 'Others'    
+        # Restaurants
+        "restaurant": "Restaurants",
+
+        # Shopping
+        "shopping_mall": "Shopping",
+        "supermarket": "Shopping",
+
+        # Education
+        "school": "Education",
+        "university": "Education",
+
+        # Transportation
+        "train_station": "Transportation",
+        "bus_station": "Transportation",
+        "subway_station": "Transportation",
+        "transit_station": "Transportation",
+
+        # Healthcare
+        "hospital": "Healthcare",
+        "pharmacy": "Healthcare",
+
+        # Others
+        "bank": "Others",
+        "police": "Others",
+        "park": "Others",
+        "church": "Others",
+        "gym": "Others",
     }
 
     tags = category_mapping.keys()

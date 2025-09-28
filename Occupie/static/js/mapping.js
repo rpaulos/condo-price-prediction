@@ -7,38 +7,72 @@ let resultsData = [];
 let nearbyMarkers = [];
 
 const tags = [
-    "school", "hospital", "shopping_mall", "supermarket", "church",
-    "park", "gym", "restaurant", "bank", "pharmacy", "police",
-    "subway_station", "train_station", "university",
-    "transit_station", "bus_station"
+    // Restaurants
+    "restaurant",
+
+    // Shopping
+    "shopping_mall",
+    "supermarket",
+
+    // Education
+    "school",
+    "university",
+
+    // Transporation
+    "subway_station",
+    "train_station",
+    "transit_station",
+    "bus_station",
+
+    // Healthcare
+    "hospital",
+    "pharmacy",
+
+    // Others
+    "bank",
+    "church",
+    "park",
+    "police",
+    "gym"
 ];
 
 const category_mapping = {
+    // Restaurants
+    'restaurant': 'Restaurants',
+
+    // Shopping
+    'shopping_mall': 'Shopping',
+    'supermarket': 'Shopping',
+
+    // Education
+    'school': 'Education',
+    'university': 'Education',
+
+    // Transportation
     'train_station': 'Transportation',
     'bus_station': 'Transportation',
     'subway_station': 'Transportation',
     'transit_station': 'Transportation',
+
+    // Healthcare
     'hospital': 'Healthcare',
     'pharmacy': 'Healthcare',
-    'police': 'Healthcare',
-    'gym': 'Healthcare',
-    'school': 'Education',
-    'university': 'Education',
-    'shopping_mall': 'Shopping',
-    'supermarket': 'Shopping',
-    'restaurant': 'Restaurants',
+
+    // Others
+    'bank': 'Others',
+    'police': 'Others',
     'park': 'Others',
     'church': 'Others',
-    'bank': 'Others'    
+    'gym': 'Others',
 };
 
 const category_colors = {
-    'Transportation': 'red',
+    'Transportation': 'yellow',
     'Healthcare': 'green',
     'Education': 'orange',
     'Shopping': 'purple',
     'Restaurants': 'blue',
-    'Others': 'yellow'
+    'Others': 'pink'
 };
 
 // This function is called by Google Maps API after it loads
