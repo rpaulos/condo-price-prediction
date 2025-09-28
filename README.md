@@ -1,4 +1,4 @@
-<img width="2000" height="2000" alt="image" src="https://github.com/user-attachments/assets/d4958f87-35ef-409e-a8da-8cd61f1f3876" /><img width="2000" height="2000" alt="image" src="https://github.com/user-attachments/assets/bed6a361-a065-45cd-803f-f8f2657f16fe" /><div>
+<div>
   <img src="https://i.imgur.com/LAzloUI.png" /> 
 </div>
 <h2 align="center" id="pinpoint">Demand Just Got Predictable</h2>
