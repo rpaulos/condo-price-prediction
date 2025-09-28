@@ -58,21 +58,33 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        // Use the Google Maps Geocoder to convert a text address into geographic coordinates
         geocoder.geocode({ address: address }, async (results, status) => {
+            // Check if the geocoding request was successful
             if (status === "OK") {
+                // Extract the geographic location (latitude and longitude) from the first result
                 const location = results[0].geometry.location;
+
+                // Center the map on the geocoded location
                 map.setCenter(location);
 
+                // Remove the previous single marker if it exists
                 if (marker) marker.setMap(null);
+
+                // Clear all existing nearby markers from the map
                 nearbyMarkers.forEach(m => m.setMap(null));
                 nearbyMarkers = [];
 
+                // Place a new marker at the geocoded location
                 marker = new google.maps.Marker({
                     map: map,
                     position: location,
                 });
 
+                // Remove any existing circle on the map
                 if (circle) circle.setMap(null);
+
+                // Draw a new circle with a 500-meter radius around the geocoded location
                 circle = new google.maps.Circle({
                     map: map,
                     radius: 500,
@@ -84,45 +96,61 @@ document.addEventListener('DOMContentLoaded', function() {
                     center: location,
                 });
 
+                // Reset the array holding the search results
                 resultsData = [];
 
+                // For each tag type, perform a nearby search and wait for it to complete
                 for (const tag of tags) {
                     await nearbySearch(location, tag);
                 }
 
+                // Log all the gathered results for debugging or further processing
                 console.log("All results:", resultsData);
             } else {
+                // Show an alert if the geocoding request was not successful
                 alert("Geocode was not successful: " + status);
             }
         });
     }
 
+    // Asynchronous function to search for nearby places of a given type (tag) around a location
     async function nearbySearch(location, tag) {
+        // Import the Google Maps Places library
         const { Place } = await google.maps.importLibrary("places");
 
+        // Prep the request object for the Places API
         const request = {
+            // Specify which fields to return for each place
             fields: ["displayName", "location"],
             locationRestriction: {
+                // Define the search area as a circle with a 500m radius around the given location
                 center: location,
                 radius: 500,
             },
+            // Filter results to include only places matching the provided tag (type)
             includedTypes: [tag],
         };
 
         try {
+            // Perform a nearby search using the prepared request
             const { places } = await Place.searchNearby(request);
 
+            // If no places are found, exit the function early
             if (!places || places.length === 0) return;
 
+            // Loop through each returned place
             places.forEach(place => {
+                // Create a blue marker on the map at the place's location
                 const m = new google.maps.Marker({
                     map: map,
                     position: place.location,
                     icon: { url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" },
                 });
 
+                // Store the created marker in the nearbyMarkers array for later reference
                 nearbyMarkers.push(m);
 
+                // Add the place information to resultsData for further processing or display
                 resultsData.push({
                     tag: tag,
                     name: place.displayName,
@@ -131,17 +159,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         } catch (err) {
+            // Log an error message if the nearby search fails
             console.error("Nearby search failed for", tag, err);
         }
     }
 
     // Form submission
     document.getElementById('valuationForm').addEventListener('submit', function(e) {
+        // Prevent the default form submission to handle it via JavaScript
         e.preventDefault();
+
+        // Trigger the function to search for the location on the map
         searchLocation();
 
+        // Change the cursor to a "wait" (loading) icon while the request is being processed
         document.body.style.cursor = 'wait';
 
+        // Send the form data to the server endpoint '/submit' using a POST request
         fetch('/submit', {
             method: 'POST',
             body: new FormData(this)
@@ -174,8 +208,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 restaurant: data.restaurant_count
             });
         })
+        // Log any errors if the fetch request fails
         .catch(err => console.error(err))
         .finally(() => {
+            // Restore the cursor to its default state once processing is done
             document.body.style.cursor = 'default';
         })
     });
