@@ -418,38 +418,6 @@ nav a:hover {
     font-size: 50px;
 }
 
-.gemini-ai-analysis-main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 10px; */
-    margin-top: 20px;
-    
-}
-
-.gemini-ai-analysis-results-container {
-    width: 100%;
-    padding: 50px;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    /* Glow effect around the border */
-    outline-offset: -2px;                    /* align with border if you use outline */
-    box-shadow: 0 0 10px #4279F6,             /* soft blue glow */
-                0 0 20px #1550EC;
-    background-color: #fff; 
-    margin-bottom: 20px;
-    text-align: justify;
-    min-height: 400px;
-}
-
-.gemini-ai-analysis-results-container h1{
-    background: linear-gradient(to right, #4279F6, #1550EC); /* direction + colors */
-    -webkit-background-clip: text;  /* show background only where text is */
-    -webkit-text-fill-color: transparent; /* make the actual text fill transparent */
-    background-clip: text;
-}
-
 .footer-wrapper {
     display: flex;
     flex-direction: row;
@@ -696,3 +664,157 @@ nav a:hover {
 .hero-valuation-section {
     padding-top: 120px;
 }
+
+/* Gemini Analysis */
+.gemini-ai-analysis-main-container {
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    /* padding: 10px; */
+    margin-top: 20px;
+
+    
+}
+
+/* AI Analysis */
+.gemini-ai-analysis-results-container {
+    width: 100%;
+    padding: 50px;
+    border-radius: 20px 0px 0px 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Glow effect around the border */
+    outline-offset: -2px;                    /* align with border if you use outline */
+    box-shadow: 0 0 10px #4279F6,             /* soft blue glow */
+                0 0 20px #1550EC;
+    background-color: #fff; 
+    margin-bottom: 20px;
+    text-align: justify;
+    min-height: 400px;
+    min-width: 70%;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.gemini-ai-analysis-results-container h1{
+    background: linear-gradient(to right, #4279F6, #1550EC); /* direction + colors */
+    -webkit-background-clip: text;  /* show background only where text is */
+    -webkit-text-fill-color: transparent; /* make the actual text fill transparent */
+    background-clip: text;
+}
+
+/* Akasha Chatbot */
+
+.akasha-terminal-chatbot-main-container {
+    margin-bottom: 20px;
+    /* Glow effect around the border */
+    outline-offset: -2px;                    /* align with border if you use outline */
+    box-shadow: 0 0 10px #4279F6,             /* soft blue glow */
+                0 0 20px #1550EC;
+    background-color: #fff; 
+}
+
+.akasha-terminal-input-and-submit-main-container {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background: #f9f9f9;
+    height: 65px;
+    
+}
+
+/* Input field */
+#akasha-terminal-input-field {
+    flex: 1; 
+    padding: 0px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    font-family: Poppins, helvetica;
+    font-weight: 400;
+
+    height: 44px;
+}
+
+#akasha-terminal-input-field:focus {
+    border-color: #4279F6;
+    box-shadow: 0 0 5px rgba(66, 121, 246, 0.5);
+}
+
+/* Submit button */
+#akasha_submit_button {
+    flex: 1;
+    padding: 0px 20px;
+    height: 44px;
+    background: linear-gradient(to right, #4279F6, #1550EC);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+#akasha_submit_button:hover {
+    background: linear-gradient(to right, #1550EC, #4279F6);
+}
+
+#akasha_submit_button:active {
+    transform: scale(0.95);
+}
+
+#akasha-chat-window {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    /* margin-bottom: 20px; */
+    max-height: 635px;
+    overflow-y: auto;
+}
+
+.user-message {
+    display: inline-block;
+    text-align: right;
+    background: #e1f5fe;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 70%;
+    /* word-wrap: break-word; */
+    align-self: flex-end;
+}
+
+.akasha-message {
+    display: inline-block;
+    text-align: left;
+    background: #f1f1f1;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-start;
+    /* white-space: pre-wrap; */
+}
+
+.akasha-message ul,
+.akasha-message ol {
+    padding-left: 10px;
+    margin: 5px 0;
+}
+
+.akasha-message li {
+    word-wrap: break-word;
+    white-space: normal;
+}
+

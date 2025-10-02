@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Landing Page</title>
+        <title>Valuation</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
                 <header>
                     <div class="logo-section">
                         <img src="logo.png" alt="Logo" class="logo">
-                        <span class="brand-name">CondoValue QC</span>
+                        <span class="brand-name">CondoNomics</span>
                     </div>
 
                     <nav>
@@ -30,19 +30,27 @@
                     </nav>
                 </header>
 
-                <section class="hero-valuation">
+                <!-- <section class="hero-valuation">
                     <h2>Interactive Property Valuation</h2>
                     <p>Experience our advanced mapping technology in action</p>
 
                     <div class="property-map-container">
                         <div id="property-details">
-                            <form action="/submit" method="POST">
+                            <form action="/submit" method="POST" id="valuationForm">
                                 <div class="form-header">
                                     <img src="images/icons/building.png" class="Icon">
                                     <h3>Property Details</h3>
                                 </div>
                                 <label for="condo-name">Condo Name:</label>
                                 <input type="text" id="condo-name" name="condo-name" placeholder="e.g. Sentinel Residences" />
+
+                                <label for="furnishing-type">Furnishing:</label>
+                                <select id="furnishing-type" name="furnishing-type">
+                                    <option value="" disabled selected>Select Furnishing Type</option>
+                                    <option value="Unfurnished">Unfurnished</option>
+                                    <option value="Semi-Furnished">Semi-Furnished</option>
+                                    <option value="Fully-Furnished">Fully-Furnished</option>
+                                </select>
 
                                 <label for="neighborhood">Neighborhood</label>
                                 <select id="neighborhood" name="neighborhood">
@@ -64,6 +72,7 @@
                                     <option value="Project 13">Project 13</option>
                                     <option value="Sikatuna Village">Sikatuna Village</option>
                                 </select>
+
                                 <div id="rooms-container">
                                     <div id="bedrooms-count">
                                         <label for="bedrooms">Bedrooms</label>
@@ -78,45 +87,299 @@
                                     <img src="images/icons/amenities.png" class="Icon">
                                     <h3>Amenities</h3>
                                 </div>
+
                                 <div class="amentieis-container">
                                     <div class="column1">
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="Pool"> Pool
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="Security"> 24/7 Security
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="FunctionHall"> Function Hall
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="Parking"> Parking
-                                        </label>
+                                        <label><input type="checkbox" name="amenities" value="Pool">Pool</label>
+                                        <label><input type="checkbox" name="amenities" value="Security">Security</label>
+                                        <label><input type="checkbox" name="amenities" value="FunctionHall">Function</label>
+                                        <label><input type="checkbox" name="amenities" value="Parking">Parking</label>
                                     </div>
                                     <div class="column2">
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="Gym"> Gym
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="Study Hall"> Study Hall
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="AirConditioning"> AC Unit
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="amenities" value="PetFriendly"> Pet Friendly
-                                        </label>
+                                        <label><input type="checkbox" name="amenities" value="Gym">Gym</label>
+                                        <label><input type="checkbox" name="amenities" value="Study Hall">Study</label>
+                                        <label><input type="checkbox" name="amenities" value="AirConditioning">Airconditioning</label>
+                                        <label><input type="checkbox" name="amenities" value="PetFriendly">Pet</label>
                                     </div>
                                 </div>
+
                                 <div class="submit-container">
                                     <button type="submit" id="submit-button">Submit</button>
                                 </div>
-                                <!-- Add pop up message here after clicking the submit -->
                             </form>
                         </div>
                         <div id="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247008.65735544031!2d120.89737170323848!3d14.683711520862554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7eadd63a1df%3A0xa6f6a02c480fc32c!2sCubao%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1757898068536!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247008.65735544031!2d120.89737170323848!3d14.683711520862554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7eadd63a1df%3A0xa6f6a02c480fc32c!2sCubao%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1757898068536!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
+                    </div>
+                </section> -->
+
+                <section class="hero-valuation-2">
+
+                    <div class="hero-valuation-2-title-container">
+                        <h2>Interactive Property Valuation</h2>
+                        <p>Experience our advanced mapping technology in action</p>
+                    </div>
+
+                    <div class="details-and-map-container">
+
+                        
+                        <div id="input-details">
+                            <form action="/submit" method="POST" id="valuationForm">
+                                <div class="header-of-form">
+                                    <img src="images/icons/building.png" class="Icon">
+                                    <h3>Property Details
+                                </div>
+
+                                <div class="input-field-group">
+                                    <label for="name-of-condo">Condo Name:</label>
+                                    <input type="text" id="name-of-condo" name="name-of-condo" placeholder="e.g. Sentinel Residence"/>
+                                </div>
+
+                                <div class="input-drop-down-group">
+                                    <label for="neighborhood-location">Neighborhood:</label>
+                                    <select id="neighborhood-location" name="neighborhood-location">
+                                        <option value="" disabled selected>Select Neighborhood</option>
+                                        <option value="Cubao">Cubao</option>
+                                        <option value="Diliman">Diliman</option>
+                                        <option value="New Manila">New Manila</option>
+                                        <option value="Project 2">Project 2</option>
+                                        <option value="Project 3">Project 3</option>
+                                        <option value="Project 4">Project 4</option>
+                                        <option value="Project 5">Project 5</option>
+                                        <option value="Project 6">Project 6</option>
+                                        <option value="Project 7">Project 7</option>
+                                        <option value="Project 8">Project 8</option>
+                                        <option value="Project 9">Project 9</option>
+                                        <option value="Project 10">Project 10</option>
+                                        <option value="Project 11">Project 11</option>
+                                        <option value="Project 12">Project 12</option>
+                                        <option value="Project 13">Project 13</option>
+                                        <option value="Sikatuna Village">Sikatuna Village</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-drop-down-group">
+                                    <label for="type-of-furnishing">Furnishing:</label>
+                                    <select id="type-of-furnishing" name="type-of-furnishing">
+                                        <option value="" disabled selected>Select Furnishing Type</option>
+                                        <option value="Unfurnished">Unfurnished</option>
+                                        <option value="Semi Furnished">Semi-Furnished</option>
+                                        <option value="Fully Furnished">Fully-Furnished</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-field-group">
+                                    <label for="size-of-condo">Size (sqm):</label>
+                                    <input type="number" id="size-of-condo" name="size-of-condo" min="12", max="500", value="12"/>
+                                </div>
+
+                                <div id="container-for-rooms">
+                                    <div id="count-of-bedrooms">
+                                        <label for="count-of-bedrooms">Bedrooms:</label>
+                                        <input type="number" id="count-of-bedrooms" name="count-of-bedrooms" min="0" max="15" value="1" /> 
+                                    </div>
+                                    <div id="count-of-bathrooms">
+                                        <label for="count-of-bathrooms">Bathrooms:</label>
+                                        <input type="number" id="count-of-bathrooms" name="count-of-bathrooms" min="0" max="15" value="1" /> 
+                                    </div>
+                                </div>
+
+                                <div class="header-of-form">
+                                    <img src="images/icons/amenities.png" class="Icon">
+                                    <h3>Amenities</h3>
+                                </div>
+
+                                <div class="container-for-amenities">
+                                    <div class="amenities-column">
+                                        <label><input type="checkbox" name="amenities" value="Security">Security</label>
+                                        <label><input type="checkbox" name="amenities" value="Airconditioning">AC Unit</label>
+                                        <label><input type="checkbox" name="amenities" value="Parking">Parking</label>
+                                        <label><input type="checkbox" name="amenities" value="Balcony">Balcony</label>
+                                        <label><input type="checkbox" name="amenities" value="Study Hall">Study Hall</label>
+                                    </div>
+                                    <div class="amenities-column">
+                                        <label><input type="checkbox" name="amenities" value="Swimming Pool">Pool</label>
+                                        <label><input type="checkbox" name="amenities" value="Multi-Purpose Hall">Event Space</label>
+                                        <label><input type="checkbox" name="amenities" value="Function Rooms">Function Room</label>
+                                        <label><input type="checkbox" name="amenities" value="Gym">Gym</label>
+                                    </div>
+                                </div>
+
+                                <div class="submit-button-container">
+                                    <!-- <button type="submit" onClick="searchLocation()">Evaluate Condo</button> -->
+                                    <button type="submit" onClick="searchLocation()" id="submit-button-real">Evaluate Condo</button>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div id="map-container">
+                            <!-- <iframe src=
+                                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247008.65735544031!2d120.89737170323848!3d14.683711520862554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7eadd63a1df%3A0xa6f6a02c480fc32c!2sCubao%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1757898068536!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+"                           </iframe> -->
+                        </div>
+
+                        <script 
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpmEpAWxwXkFP7bFvVVeo9PaBSbEuvrVI&libraries=places&callback=initMap" async defer>
+                        </script>
+
+                        <script>
+                            // Global variables
+                            let map;
+                            let geocoder;
+                            let marker;
+                            let circle;
+                            let resultsData = [];
+                            let nearbyMarkers = [];
+
+                            const tags = [
+                                "school", "hospital", "shopping_mall", "supermarket", "church",
+                                "park", "gym", "restaurant", "bank", "pharmacy", "police",
+                                "subway_station", "train_station", "university",
+                                "transit_station", "bus_station"
+                            ];
+
+                            function initMap() {
+                                // Start centered in Cubao, Quezon City
+                                map = new google.maps.Map(document.getElementById("map-container"), {
+                                    center: { lat: 14.61286, lng: 121.05457 },
+                                    zoom: 15,
+                                });
+
+                                geocoder = new google.maps.Geocoder();
+                            }
+
+                            function searchLocation() {
+                                const address = document.getElementById("name-of-condo").value;
+
+                                if (!geocoder) {
+                                    alert("Google Maps API is still laoding. Try again.");
+                                    return;
+                                }
+
+                                geocoder.geocode({ address: address}, async (results, status) => {
+                                    if (status === "OK") {
+                                        const location = results[0].geometry.location;
+                                        map.setCenter(location);
+
+                                        // Remove old main marker if it exists
+                                        if (marker) marker.setMap(null);
+
+                                        // Remove all nearby markers
+                                        nearbyMarkers.forEach(m => m.setMap(null));
+                                        nearbyMarkers = [];
+
+                                        // Create new main marker
+                                        marker = new google.maps.Marker({
+                                            map: map,
+                                            position: location,
+                                        });
+
+                                        // Draw 500m radius circle around searched location
+                                        if (circle) circle.setMap(null);
+                                        circle = new google.maps.Circle({
+                                        map: map,
+                                        radius: 500,
+                                        fillColor: "#00AAFF",
+                                        fillOpacity: 0.15,
+                                        strokeColor: "#0088CC",
+                                        strokeOpacity: 0.8,
+                                        strokeWeight: 2,
+                                        center: location,
+                                        });
+
+                                        // Reset stored results
+                                        resultsData = [];
+
+                                        // Perform nearby search for each tag
+                                        for (const tag of tags) {
+                                            await nearbySearch(location, tag);
+                                        }
+
+                                        console.log("All results:", resultsData);
+                                    } else {
+                                        alert("Geocode was not successful: " + status);
+                                    }
+                                });
+                            }
+
+                            // ✅ Perform nearby search for a specific place type
+                            async function nearbySearch(location, tag) {
+                                const { Place } = await google.maps.importLibrary("places");
+
+                                const request = {
+                                fields: ["displayName", "location"], // Only fetch name + location
+                                locationRestriction: {
+                                    center: location,
+                                    radius: 500,
+                                },
+                                includedTypes: [tag], // Type of place (e.g., school, hospital, etc.)
+                                };
+
+                                try {
+                                const { places } = await Place.searchNearby(request);
+
+                                if (!places || places.length === 0) {
+                                    console.warn("No results for tag:", tag);
+                                    return;
+                                }
+
+                                places.forEach(place => {
+                                    // Create a blue marker for each nearby place
+                                    const m = new google.maps.Marker({
+                                    map: map,
+                                    position: place.location,
+                                    icon: {
+                                        url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                                    },
+                                    });
+
+                                    // Keep track of nearby marker so it can be cleared later
+                                    nearbyMarkers.push(m);
+
+                                    // Save place info into dictionary
+                                    resultsData.push({
+                                    tag: tag,                  // Place type
+                                    name: place.displayName,   // Place name
+                                    lat: place.location.lat,   // Latitude
+                                    lng: place.location.lng,   // Longitude
+                                    });
+                                });
+
+                                console.log("Found places for", tag, places);
+                                } catch (err) {
+                                console.error("Nearby search failed for", tag, err);
+                                }
+                            }
+
+                            // document.getElementById('valuationForm').addEventListener('submit', function (e) {
+                            //     e.preventDefault();              // Stop the normal page reload
+                            //     searchLocation();                // Run your map code
+                            //     // Optionally send the form data to Flask with fetch/AJAX:
+                            //     fetch('/submit', {
+                            //         method: 'POST',
+                            //         body: new FormData(this)
+                            //     }).then(res => res.text())
+                            //     .then(data => console.log("Server says:", data));
+
+                                document.getElementById('valuationForm').addEventListener('submit', function (e) {
+                                e.preventDefault();              // Stop the normal page reload
+                                searchLocation();                // Run your map code
+
+                                // Send the form data to Flask with fetch/AJAX:
+                                fetch('/submit', {
+                                    method: 'POST',
+                                    body: new FormData(this)
+                                })
+                                .then(res => res.json())
+                                .then(data => {
+                                    document.getElementById('montly-rental-estimate').innerText = Number(data.mlr_result).toFixed(2);
+                                })
+                                .catch(err => console.error(err));
+                            });
+                        </script>
                     </div>
                 </section>
             </div>
@@ -169,6 +432,10 @@
                         </div>
                     </div>
                 </div>
+
+                <script>
+                    document.getElementById()
+                </script>
             </section>
 
             <section class="results-breakdown" id="results-breakdown">
@@ -180,7 +447,7 @@
                     <div class="company-details">
                         <div>
                             <img src="images/logo.png" alt="logo" class="logo">
-                            <h2> CondoValue QC </h2>
+                            <h2> CondoNomics </h2>
                         </div>
                         <p>Empowering Filipino property owners with intelligent geospatial insights for accurate condo rental valuations in Quezon City.</p>
                         <div class="social-icons">
@@ -217,6 +484,5 @@
             </section>
 
         </main>
-
     </body>
 </html>

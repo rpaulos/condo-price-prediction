@@ -13,11 +13,10 @@
 
     <body>
         <!-- Header with logo and navigation bar section-->
-            <header>
+            <!-- <header>
                 <div class="logo-section">
                     <img src="{{ url_for('static', filename='images/Navigation/Logo.png') }}" 
                         alt="OccuPie" class="Logo">
-                    <!-- <span class="company-name">OCCUPIE</span> -->
                 </div>
                 <nav>
                     <ul>
@@ -27,7 +26,33 @@
                         <li><a href="{{ url_for('landing') }}#developers">Developers</a></li>
                     </ul>
                 </nav>
-            </header>
+            </header> -->
+
+        <header>       <!-- Navigation Bar -->
+            <nav class="navbar">
+                <div class="nav-background"></div>
+                <div class="nav-content">
+                    <div class="nav-logo">
+                        <!-- <img src="Resources/Navigation/Logo.png" alt="OccuPie Logo"> -->
+                        <img src="{{ url_for('static', filename='images/Navigation/Logo.png') }}" 
+                            alt="OccuPie">
+                    </div>
+                        <div class="nav-links">
+                            <a href="{{ url_for('landing') }}#home">Home</a>
+                            <a href="{{ url_for('landing') }}#features">Features</a>
+                            <a href="{{ url_for('landing') }}#tech-stack">Tech Stack</a>
+                            <a href="{{ url_for('landing') }}#overview">Overview</a>
+                            <a href="{{ url_for('landing') }}#developers">Developers</a>
+
+                        </div>
+                    </div>
+                    <!-- Decorative Line -->
+                    <div class="decorative-line">
+                        <img src="{{ url_for('static', filename='images/Navigation/Line.png') }}" alt="">
+                    </div>
+                </div>
+            </nav>
+        </header>
 
         <main>
 
@@ -57,12 +82,15 @@
 
                                 <!-- Name of the condo -->
                                 <div class="input-field-group">
-                                    <label for="name-of-condo">Condo Name:</label>
-                                    <input type="text" id="name-of-condo" name="name-of-condo" placeholder="e.g. Sentinel Residence"/>
+                                    <label for="name-of-condo">Condo Name / Address:</label>
+                                    <input type="text" 
+                                            id="name-of-condo" 
+                                            name="name-of-condo" 
+                                            placeholder="e.g. Sentinel Residence"/>
                                 </div>
 
                                 <!-- Neighborhood location of condo -->
-                                <div class="input-drop-down-group">
+                                <!-- <div class="input-drop-down-group">
                                     <label for="neighborhood">Neighborhood:</label>
                                     <select id="neighborhood" name="neighborhood">
                                         <option value="" disabled selected>Select Neighborhood</option>
@@ -83,12 +111,26 @@
                                         <option value="Project 13">Project 13</option>
                                         <option value="Sikatuna Village">Sikatuna Village</option>
                                     </select>
+                                </div> -->
+
+                                <!-- Neighborhood to districts -->
+                                <div class="input-drop-down-group">
+                                    <label for="neighborhood">Neighborhood:</label>
+                                    <select id="neighborhood" name="neighborhood">
+                                        <option value="" disabled selected>Select Neighborhood</option>
+                                        <option value="District 1">District 1</option>
+                                        <option value="District 2">District 2</option>
+                                        <option value="District 3">District 3</option>
+                                        <option value="District 4">District 4</option>
+                                        <option value="District 5">District 5</option>
+                                        <option value="District 6">District 6</option>
+                                    </select>
                                 </div>
 
                                 <!-- Type of furnishing -->
                                 <div class="input-drop-down-group">
                                     <label for="type-of-furnishing">Furnishing:</label>
-                                    <select id="type-of-furnishing" name="type-of-furnishing">
+                                    <select id="type-of-furnishing" name="type-of-furnishing" required>
                                         <option value="" disabled selected>Select Furnishing Type</option>
                                         <option value="Unfurnished">Unfurnished</option>
                                         <option value="Semi Furnished">Semi-Furnished</option>
@@ -96,21 +138,39 @@
                                     </select>
                                 </div>
 
-                                <!-- Size of condo -->
+                                <!-- Size of condo | The minimum legal requirement for a condo is 18sqm-->
                                 <div class="input-field-group">
                                     <label for="size-of-condo">Size (sqm):</label>
-                                    <input type="number" id="size-of-condo" name="size-of-condo" min="12", max="500", value="12"/>
+                                    <input type="number" 
+                                            id="size-of-condo" 
+                                            name="size-of-condo" 
+                                            min="18"
+                                            max="500" 
+                                            value="18" 
+                                            required/>
                                 </div>
 
                                 <!-- Number of bedrooms and bathrooms -->
                                 <div class="container-for-bed-bath">
                                     <div class="container-of-bedrooms">
                                         <label for="count-of-bedrooms">Bedrooms:</label>
-                                        <input type="number" id="count-of-bedrooms" name="count-of-bedrooms" min="0" max="15" value="1" /> 
+                                        <input type="number" 
+                                                id="count-of-bedrooms" 
+                                                name="count-of-bedrooms" 
+                                                min="0" 
+                                                max="15" 
+                                                value="1" 
+                                                required/> 
                                     </div>
                                     <div class="container-of-bathrooms">
                                         <label for="count-of-bathrooms">Bathrooms:</label>
-                                        <input type="number" id="count-of-bathrooms" name="count-of-bathrooms" min="0" max="15" value="1" /> 
+                                        <input type="number" 
+                                                id="count-of-bathrooms" 
+                                                name="count-of-bathrooms" 
+                                                min="1" 
+                                                max="15" 
+                                                value="1" 
+                                                required/> 
                                     </div>
                                 </div>
 
@@ -230,6 +290,34 @@
                              <div id="ai-analysis-text">
                                 OCCUPIE, Your Smart AI Property Analyst, Powered by Google Gemini!
                              </div>
+                        </div>
+                    
+
+                        <div class="akasha-terminal-chatbot-main-container">
+                            <div class="akasha-temrinal-chatbot-container">
+                                <form action="/ask-akasha" method="POST" id="akasha-form">
+                                    <!-- Chat window -->
+                                    <div id="akasha-chat-window">
+                                        <div class="akasha-message">
+                                            Hello, my name is Akasha! Your AI Real Estate Analyst.
+                                        </div>
+                                    </div>
+
+                                    <!-- Input and submit -->
+                                    <div class="akasha-terminal-input-and-submit-main-container">
+                                        <div class="akasha-terminal-input-field-container">
+                                            <input type="text" 
+                                                id="akasha-terminal-input-field" 
+                                                name="akasha-terminal-input-field" 
+                                                placeholder="Ask anything"/>
+                                        </div>
+                                        <div class="akasha-terminal-submit">
+                                            <button type="submit" id="akasha_submit_button">Akasha</button>
+                                            <script src="{{ url_for('static', filename='js/akasha.js') }}"></script>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

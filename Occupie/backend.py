@@ -4,15 +4,27 @@ import markdown
 
 import numpy as np
 
-from flask import Flask
-from flask import jsonify
-from flask import request
-from flask import render_template
+from flask import Flask, jsonify, request, render_template
 from keys import googlemaps_api_key
 from functions import reverse_geocode, nearby_establishment_search, count_categories, place, places_details, format_data, format_data_lr, multiple_linear_regression_model, logistic_regression_model, justification_query, justify_condo_price
+from akasha import send_user_message, justify_condo_price_chat
 from pprint import pprint
 
 app = Flask(__name__)
+
+latest_results = {}
+chat_history = []
+
+condo_name = None
+neighborhood = None
+size = None
+bedrooms = None
+bathrooms = None
+furnishing = None
+amenities = None
+establishments = None
+predicted_price = None
+predicted_occupancy = None
 
 @app.route('/')
 def index():
@@ -28,6 +40,8 @@ def landing():
 
 @app.route('/submit', methods=['POST'])
 def occupie():
+    global condo_name, neighborhood, size, bedrooms, bathrooms, furnishing, amenities, establishments, predicted_price, predicted_occupancy
+
     condo_name = request.form.get('name-of-condo')
     neighborhood = request.form.get('neighborhood')
     furnishing = request.form.get('type-of-furnishing')
@@ -101,6 +115,35 @@ def occupie():
             'markdown_ai_analysis': 'Location is outside of Quezon City. No analysis available.',
             'note': 'Fallback values returned because the location is not in Quezon City.'
         }), 200 
+
+
+@app.route('/ask-akasha', methods=['POST'])
+def akasha():
+    user_message = request.form.get("akasha-terminal-input-field")
+
+    if not user_message:
+        return jsonify({"error": "No message provided"}), 400
+    
+    akasha_response = send_user_message(user_message)
+
+    if not akasha_response:
+        akasha_response = "Sorry, I didn’t understand that."
+
+    # print("Akasha responding with:", akasha_response)
+    # print("Chat history:", chat_history)
+
+    akasha_response_html = markdown.markdown(akasha_response)
+
+
+    chat_history.append({'user': user_message, 'akasha': akasha_response_html})
+
+    # return render_template("occupie.html", akasha_response=akasha_response)
+
+    return jsonify({
+        'chat_history': chat_history,
+        'akasha_response': akasha_response_html
+    })
+
 
 if __name__ == "__main__":
     app.run(debug=True)

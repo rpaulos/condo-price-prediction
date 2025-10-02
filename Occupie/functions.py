@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import google.generativeai as genai
 
+from akasha import chat
 from keys import googlemaps_api_key, gemini_api_key
 from typing import List, Dict, Optional
 
@@ -576,9 +577,8 @@ Use proper HTML tags and the given classes. Follow the format above. Do not incl
 Do not include answers that are not relevant to the topic.
 """
     
-    # os ng condo low demand, ways to increase the demand
-
     model = genai.GenerativeModel('models/gemini-2.5-flash')
-    response = model.generate_content(prompt)
+    # response = model.generate_content(prompt)
+    response = chat.send_message(prompt)
 
     return response.text
