@@ -196,7 +196,7 @@ You can access the OccuPie repository by pressing the button below or by manuall
 </p>
 
 <p align="center">
-  <a href="https://i.imgur.com/LAzloUI.png">
+  <a href="https://github.com/rpaulos/condo-price-prediction">
     <img src="https://img.shields.io/badge/-🏢%20OccuPie-blue?style=for-the-badge" alt="OccuPie" />
   </a>
 </p>
