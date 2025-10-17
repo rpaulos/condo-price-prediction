@@ -6,9 +6,9 @@
   <a href="https://github.com/rpaulos/condo-price-prediction">
     <img src="https://img.shields.io/badge/-🏢%20OccuPie-blue?style=for-the-badge" alt="OccuPie" />
   </a>
-  <a href="https://www.canva.com/design/DAGw-uexZzo/Q5nBn2KkSMCg6PWsHWlg_Q/edit?fbclid=IwY2xjawMZTTNleHRuA2FlbQIxMQABHhgOrkz-EJ9nvr1iCIGcevqiDvREcgcTkmbU_ZhjuX3jISVLY9GDu2Z4zgk-_aem_g_SkdNZJxn36IaDneFHnAA">
+  <!-- <a href="https://www.canva.com/design/DAGw-uexZzo/Q5nBn2KkSMCg6PWsHWlg_Q/edit?fbclid=IwY2xjawMZTTNleHRuA2FlbQIxMQABHhgOrkz-EJ9nvr1iCIGcevqiDvREcgcTkmbU_ZhjuX3jISVLY9GDu2Z4zgk-_aem_g_SkdNZJxn36IaDneFHnAA">
     <img src="https://img.shields.io/badge/-📊%20Pitch%20Deck-white?style=for-the-badge" alt="Final Pitch Deck" />
-  </a>
+  </a> -->
 </p>
 
 ---
